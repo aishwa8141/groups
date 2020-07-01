@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import org.sunbird.Application;
 import org.sunbird.exception.BaseException;
+import play.api.Environment;
 import play.api.inject.ApplicationLifecycle;
 
 /**
@@ -19,7 +20,8 @@ public class ApplicationStart {
    * @param lifecycle ApplicationLifecycle
    */
   @Inject
-  public ApplicationStart(ApplicationLifecycle lifecycle) throws BaseException {
+  public ApplicationStart(ApplicationLifecycle lifecycle,
+                          Environment environment) throws BaseException {
     // instantiate actor system and initialize all the actors
     Application.getInstance().init();
     // Shut-down hook

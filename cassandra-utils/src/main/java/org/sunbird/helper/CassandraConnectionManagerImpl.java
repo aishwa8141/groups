@@ -26,7 +26,7 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
 
   @Override
   public void createConnection(String[] hosts) throws BaseException {
-    createCassandraConnection(hosts);
+    //createCassandraConnection(hosts);
   }
 
   @Override
@@ -150,7 +150,9 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
         for (Map.Entry<String, Session> entry : cassandraSessionMap.entrySet()) {
           cassandraSessionMap.get(entry.getKey()).close();
         }
-        cluster.close();
+        if (cluster != null) {
+          cluster.close();
+        }
         logger.info("completed resource cleanup Cassandra.");
       } catch (Exception ex) {
         logger.info("Error :", ex);

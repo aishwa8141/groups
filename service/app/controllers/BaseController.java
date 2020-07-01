@@ -80,22 +80,22 @@ public class BaseController extends Controller {
    * @return CompletionStage<Result>
    * @throws BaseException
    */
-  public CompletionStage<Result> invoke(Request request) throws BaseException {
+  public CompletionStage<Result> invoke(Request request) {
     if (request == null) {
-      handleResponse(new ValidationException.InvalidRequestData(), request);
+      handleResponse(new ValidationException.InvalidRequestData(), null);
     }
 
-    Function<Object, Result> fn =
-        new Function<Object, Result>() {
-          @Override
-          public Result apply(Object object) {
-            return handleResponse(object, request);
-          }
-        };
     Timeout timeout = new Timeout(getTimeout(request), TimeUnit.SECONDS);
 
     ActorRef actorRef = getActorRef(request.getOperation());
     if (actorRef != null) {
+      Function<Object, Result> fn =
+              new Function<Object, Result>() {
+                @Override
+                public Result apply(Object object) {
+                  return handleResponse(object, request);
+                }
+              };
       Future<Object> future = Patterns.ask(actorRef, request, timeout);
       return FutureConverters.toJava(future).thenApplyAsync(fn);
     } else {

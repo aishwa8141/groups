@@ -6,7 +6,7 @@ import play.http.DefaultHttpFilters;
 public class AllFilters extends DefaultHttpFilters {
 
   @Inject
-  public AllFilters(RequestIdAddFilter requestIdAddFilter, AccessLogFilter accessLogFilter) {
-    super(requestIdAddFilter, accessLogFilter);
+  public AllFilters(RequestIdAddFilter requestIdAddFilter) {
+    super(requestIdAddFilter);
   }
 }

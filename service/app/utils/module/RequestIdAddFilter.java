@@ -13,6 +13,9 @@ import play.mvc.Filter;
 import play.mvc.Http;
 import play.mvc.Result;
 
+/**
+ * Generates and adds a msgId header if not found already.
+ */
 public class RequestIdAddFilter extends Filter {
   private static final Logger log = LoggerFactory.getLogger(RequestIdAddFilter.class);
 
@@ -25,8 +28,6 @@ public class RequestIdAddFilter extends Filter {
   public CompletionStage<Result> apply(
       Function<Http.RequestHeader, CompletionStage<Result>> nextFilter,
       Http.RequestHeader requestHeader) {
-    long startTime = System.currentTimeMillis();
-
     Optional<String> requestIdHeader = requestHeader.getHeaders().get(JsonKey.REQUEST_MESSAGE_ID);
     String reqId =
         requestIdHeader.isPresent() ? requestIdHeader.get() : UUID.randomUUID().toString();
