@@ -1,12 +1,17 @@
 package org.sunbird.helper;
 
-import com.datastax.driver.core.*;
+import com.datastax.driver.core.AtomicMonotonicTimestampGenerator;
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ConsistencyLevel;
+import com.datastax.driver.core.Host;
+import com.datastax.driver.core.HostDistance;
+import com.datastax.driver.core.Metadata;
+import com.datastax.driver.core.PoolingOptions;
+import com.datastax.driver.core.ProtocolVersion;
+import com.datastax.driver.core.QueryOptions;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.TableMetadata;
 import com.datastax.driver.core.policies.DefaultRetryPolicy;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +19,12 @@ import org.sunbird.common.Constants;
 import org.sunbird.exception.BaseException;
 import org.sunbird.message.IResponseMessage;
 import org.sunbird.message.ResponseCode;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 public class CassandraConnectionManagerImpl implements CassandraConnectionManager {
   private static Cluster cluster;
@@ -26,7 +37,7 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
 
   @Override
   public void createConnection(String[] hosts) throws BaseException {
-    //createCassandraConnection(hosts);
+    createCassandraConnection(hosts);
   }
 
   @Override
@@ -86,17 +97,31 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
   }
 
   private static Cluster createCluster(String[] hosts, PoolingOptions poolingOptions) {
+    int port = 0;
+    try {
+      port = Integer.parseInt(System.getenv("sunbird_cassandra_port"));
+    } catch (NumberFormatException nfe) {
+      logger.info("sunbird_cassandra_port is not set. Checking test run...");
+      try {
+        port = Integer.parseInt(System.getProperty("sunbird_cassandra_port"));
+      } catch (NumberFormatException nfe2) {
+        logger.info("Defaulting to default port");
+        port = 9042;
+      }
+    }
+
     Cluster.Builder builder =
-        Cluster.builder()
-            .addContactPoints(hosts)
-            .withProtocolVersion(ProtocolVersion.V3)
-            .withRetryPolicy(DefaultRetryPolicy.INSTANCE)
-            .withTimestampGenerator(new AtomicMonotonicTimestampGenerator())
-            .withPoolingOptions(poolingOptions);
+            Cluster.builder()
+                    .addContactPoints(hosts)
+                    .withPort(port)
+                    .withProtocolVersion(ProtocolVersion.V3)
+                    .withRetryPolicy(DefaultRetryPolicy.INSTANCE)
+                    .withTimestampGenerator(new AtomicMonotonicTimestampGenerator())
+                    .withPoolingOptions(poolingOptions);
 
     ConsistencyLevel consistencyLevel = getConsistencyLevel();
     logger.info(
-        "CassandraConnectionManagerImpl:createCluster: Consistency level = " + consistencyLevel);
+            "CassandraConnectionManagerImpl:createCluster: Consistency level = " + consistencyLevel);
 
     if (consistencyLevel != null) {
       builder.withQueryOptions(new QueryOptions().setConsistencyLevel(consistencyLevel));

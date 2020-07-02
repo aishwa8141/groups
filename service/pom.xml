@@ -21,6 +21,10 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>typesafe</id>
+            <url>https://repo.typesafe.com/typesafe/maven-releases/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -60,12 +64,22 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>org.sunbird</groupId>
             <artifactId>sb-utils</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.sunbird</groupId>
@@ -75,6 +89,10 @@
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -101,6 +119,10 @@
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -191,15 +213,77 @@
             <version>${play2.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.cassandraunit</groupId>
+            <artifactId>cassandra-unit</artifactId>
+            <version>3.11.2.0</version>
+            <scope>test</scope>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.slf4j</groupId>-->
+<!--                    <artifactId>slf4j-log4j12</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-core</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-classic</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>com.google.guava</groupId>-->
+<!--                    <artifactId>guava</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.hibernate</groupId>-->
+<!--                    <artifactId>hibernate-validator</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.apache.httpcomponents</groupId>-->
+<!--                    <artifactId>httpclient</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>commons-codec</groupId>-->
+<!--                    <artifactId>commons-codec</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+
+            <exclusions>
+                <exclusion>
+                    <groupId>com.carrotsearch</groupId>
+                    <artifactId>hppc</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-transport</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-handler</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hyperic/sigar -->
+        <dependency>
+            <groupId>org.hyperic</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>${basedir}/app</sourceDirectory>
-        <testSourceDirectory>${basedir}/test</testSourceDirectory>
+        <testSourceDirectory>${basedir}/test/java</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/conf</directory>
             </resource>
         </resources>
+        <testResources>
+            <testResource>
+                <directory>${basedir}/test/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -227,116 +311,59 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
+                <version>2.20</version>
                 <configuration>
+                    <reuseForks>false</reuseForks>
+                    <forkedProcessTimeoutInSeconds>120</forkedProcessTimeoutInSeconds>
+                    <forkedProcessExitTimeoutInSeconds>120</forkedProcessExitTimeoutInSeconds>
                     <includes>
                         <include>**/*Spec.java</include>
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
-                <configuration>
-                    <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
-                    <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
-                    <excludes>
-                        <exclude>**/common/**</exclude>
-                        <exclude>**/router/**</exclude>
-                        <exclude>**/Reverse*/**</exclude>
-                        <exclude>**/routes.*</exclude>
-                        <exclude>**/routes$javascript.**</exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>jacoco-initialize</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-site</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
+<!--            <plugin>-->
+<!--                <groupId>org.jacoco</groupId>-->
+<!--                <artifactId>jacoco-maven-plugin</artifactId>-->
+<!--                <version>0.8.4</version>-->
+<!--                <configuration>-->
+<!--                    <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>-->
+<!--                    <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>-->
+<!--                    <excludes>-->
+<!--                        <exclude>**/common/**</exclude>-->
+<!--                        <exclude>**/router/**</exclude>-->
+<!--                        <exclude>**/Reverse*/**</exclude>-->
+<!--                        <exclude>**/routes.*</exclude>-->
+<!--                        <exclude>**/routes$javascript.**</exclude>-->
+<!--                    </excludes>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>jacoco-initialize</id>-->
+<!--                        <goals>-->
+<!--                            <goal>prepare-agent</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>jacoco-site</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>report</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>default-check</id>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <rules>-->
 
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.4</version>
-                <executions>
-                    <execution>
-                        <id>findbug</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <findbugsXmlOutputDirectory>
-                        ${project.build.directory}/findbugs
-                    </findbugsXmlOutputDirectory>
-                    <failOnError>false</failOnError>
-                    <xmlOutput>false</xmlOutput>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>xml-maven-plugin</artifactId>
-                <version>1.0</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>transform</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <transformationSets>
-                        <transformationSet>
-                            <dir>${project.build.directory}/findbugs</dir>
-                            <outputDir>${project.build.directory}/findbugs</outputDir>
-                            <stylesheet>fancy-hist.xsl</stylesheet>
-                            <!--<stylesheet>default.xsl</stylesheet>-->
-                            <!--<stylesheet>plain.xsl</stylesheet>-->
-                            <!--<stylesheet>fancy.xsl</stylesheet>-->
-                            <!--<stylesheet>summary.xsl</stylesheet>-->
-                            <fileMappers>
-                                <fileMapper
-                                        implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetExtension>.html</targetExtension>
-                                </fileMapper>
-                            </fileMappers>
-                        </transformationSet>
-                    </transformationSets>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.findbugs</groupId>
-                        <artifactId>findbugs</artifactId>
-                        <version>2.0.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+<!--                            </rules>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

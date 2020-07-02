@@ -1,0 +1,1485 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.sunbird:group-service >----------------------
+[INFO] Building group-service 1.0.0
+[INFO] -------------------------------[ play2 ]--------------------------------
+Downloading from typesafe-releases-plugins: https://repo.typesafe.com/typesafe/releases/org/apache/maven/plugins/maven-clean-plugin/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/maven-metadata.xml
+Progress (1): 714 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/maven-metadata.xml (714 B at 453 B/s)
+Downloading from typesafe-releases-plugins: https://repo.typesafe.com/typesafe/releases/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml
+Progress (1): 843 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/maven-metadata.xml (843 B at 2.0 kB/s)
+Downloading from typesafe-releases-plugins: https://repo.typesafe.com/typesafe/releases/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml
+Progress (1): 867 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml (867 B at 2.4 kB/s)
+Downloading from typesafe-releases-plugins: https://repo.typesafe.com/typesafe/releases/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml
+Progress (1): 663 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/maven-metadata.xml (663 B at 1.4 kB/s)
+Downloading from typesafe-releases-plugins: https://repo.typesafe.com/typesafe/releases/org/apache/maven/plugins/maven-deploy-plugin/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/maven-metadata.xml
+Progress (1): 749 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/maven-metadata.xml (749 B at 1.7 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ group-service ---
+[INFO] Deleting /Users/rajeshr/Projects/groups/service/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.4:prepare-agent (jacoco-initialize) @ group-service ---
+[INFO] argLine set to -javaagent:/Users/rajeshr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.4/org.jacoco.agent-0.8.4-runtime.jar=destfile=/Users/rajeshr/Projects/groups/service/target/coverage-reports/jacoco-unit.exec,excludes=**/common/**:**/router/**:**/Reverse*/**:**/routes.*:**/routes$javascript.**
+[INFO] 
+[INFO] --- play2-maven-plugin:1.0.0-rc5:routes-compile (default-routes-compile) @ group-service ---
+[INFO] Generating injected router
+[INFO] 1 router processed, 1 compiled
+[INFO] 
+[INFO] --- play2-maven-plugin:1.0.0-rc5:template-compile (default-template-compile) @ group-service ---
+[INFO] No templates to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ group-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- sbt-compiler-maven-plugin:1.0.0:compile (default-compile) @ group-service ---
+[INFO] Compiling 4 Scala sources and 18 Java sources to /Users/rajeshr/Projects/groups/service/target/classes...
+[WARNING] Note: /Users/rajeshr/Projects/groups/service/app/utils/module/AccessLogFilter.java uses unchecked or unsafe operations.
+[WARNING] Note: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ group-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- sbt-compiler-maven-plugin:1.0.0:testCompile (default-testCompile) @ group-service ---
+[INFO] Compiling 7 Java sources to /Users/rajeshr/Projects/groups/service/target/test-classes...
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ group-service ---
+[INFO] Surefire report directory: /Users/rajeshr/Projects/groups/service/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running controllers.CreateGroupControllerTest
+[2020-07-02 18:40:22,771] [INFO] o.a.c.config.YamlConfigurationLoader:89 [] [main] [] - Configuration location: file:/Users/rajeshr/Projects/groups/service/target/embeddedCassandra/cu-cassandra.yaml 
+[2020-07-02 18:40:23,162] [INFO] org.apache.cassandra.config.Config:496 [] [main] [] - Node configuration:[allocate_tokens_for_keyspace=null; authenticator=AllowAllAuthenticator; authorizer=AllowAllAuthorizer; auto_bootstrap=true; auto_snapshot=false; back_pressure_enabled=false; back_pressure_strategy=null; batch_size_fail_threshold_in_kb=50; batch_size_warn_threshold_in_kb=5; batchlog_replay_throttle_in_kb=1024; broadcast_address=null; broadcast_rpc_address=null; buffer_pool_use_heap_if_exhausted=true; cas_contention_timeout_in_ms=1000; cdc_enabled=false; cdc_free_space_check_interval_ms=250; cdc_raw_directory=target/embeddedCassandra/cdc; cdc_total_space_in_mb=0; client_encryption_options=<REDACTED>; cluster_name=Test Cluster; column_index_cache_size_in_kb=2; column_index_size_in_kb=64; commit_failure_policy=stop; commitlog_compression=null; commitlog_directory=target/embeddedCassandra/commitlog; commitlog_max_compression_buffers_in_pool=3; commitlog_periodic_queue_size=-1; commitlog_segment_size_in_mb=32; commitlog_sync=periodic; commitlog_sync_batch_window_in_ms=NaN; commitlog_sync_period_in_ms=10000; commitlog_total_space_in_mb=null; compaction_large_partition_warning_threshold_mb=100; compaction_throughput_mb_per_sec=16; concurrent_compactors=null; concurrent_counter_writes=32; concurrent_materialized_view_writes=32; concurrent_reads=32; concurrent_replicates=null; concurrent_writes=32; counter_cache_keys_to_save=2147483647; counter_cache_save_period=7200; counter_cache_size_in_mb=null; counter_write_request_timeout_in_ms=5000; credentials_cache_max_entries=1000; credentials_update_interval_in_ms=-1; credentials_validity_in_ms=2000; cross_node_timeout=false; data_file_directories=[Ljava.lang.String;@3830b06c; disk_access_mode=auto; disk_failure_policy=stop; disk_optimization_estimate_percentile=0.95; disk_optimization_page_cross_chance=0.1; disk_optimization_strategy=ssd; dynamic_snitch=true; dynamic_snitch_badness_threshold=0.1; dynamic_snitch_reset_interval_in_ms=600000; dynamic_snitch_update_interval_in_ms=100; enable_materialized_views=true; enable_scripted_user_defined_functions=false; enable_user_defined_functions=false; enable_user_defined_functions_threads=true; encryption_options=org.apache.cassandra.config.EncryptionOptions$ServerEncryptionOptions@15214920; endpoint_snitch=SimpleSnitch; file_cache_round_up=null; file_cache_size_in_mb=null; gc_log_threshold_in_ms=200; gc_warn_threshold_in_ms=0; hinted_handoff_disabled_datacenters=[]; hinted_handoff_enabled=true; hinted_handoff_throttle_in_kb=1024; hints_compression=null; hints_directory=target/embeddedCassandra/hints; hints_flush_period_in_ms=10000; incremental_backups=false; index_interval=128; index_summary_capacity_in_mb=null; index_summary_resize_interval_in_minutes=60; initial_token=null; inter_dc_stream_throughput_outbound_megabits_per_sec=200; inter_dc_tcp_nodelay=true; internode_authenticator=null; internode_compression=none; internode_recv_buff_size_in_bytes=0; internode_send_buff_size_in_bytes=0; key_cache_keys_to_save=2147483647; key_cache_save_period=14400; key_cache_size_in_mb=null; listen_address=127.0.0.1; listen_interface=null; listen_interface_prefer_ipv6=false; listen_on_broadcast_address=false; max_hint_window_in_ms=10800000; max_hints_delivery_threads=2; max_hints_file_size_in_mb=128; max_mutation_size_in_kb=null; max_streaming_retries=3; max_value_size_in_mb=256; memtable_allocation_type=heap_buffers; memtable_cleanup_threshold=null; memtable_flush_writers=0; memtable_heap_space_in_mb=null; memtable_offheap_space_in_mb=null; min_free_space_per_drive_in_mb=50; native_transport_flush_in_batches_legacy=true; native_transport_max_concurrent_connections=-1; native_transport_max_concurrent_connections_per_ip=-1; native_transport_max_frame_size_in_mb=256; native_transport_max_threads=128; native_transport_port=9143; native_transport_port_ssl=null; num_tokens=1; otc_backlog_expiration_interval_ms=200; otc_coalescing_enough_coalesced_messages=8; otc_coalescing_strategy=DISABLED; otc_coalescing_window_us=200; partitioner=org.apache.cassandra.dht.Murmur3Partitioner; permissions_cache_max_entries=1000; permissions_update_interval_in_ms=-1; permissions_validity_in_ms=2000; phi_convict_threshold=8.0; prepared_statements_cache_size_mb=null; range_request_timeout_in_ms=10000; read_request_timeout_in_ms=5000; request_scheduler=org.apache.cassandra.scheduler.NoScheduler; request_scheduler_id=null; request_scheduler_options=null; request_timeout_in_ms=10000; role_manager=null; roles_cache_max_entries=1000; roles_update_interval_in_ms=-1; roles_validity_in_ms=2000; row_cache_class_name=org.apache.cassandra.cache.OHCProvider; row_cache_keys_to_save=2147483647; row_cache_save_period=0; row_cache_size_in_mb=0; rpc_address=localhost; rpc_interface=null; rpc_interface_prefer_ipv6=false; rpc_keepalive=true; rpc_listen_backlog=50; rpc_max_threads=2147483647; rpc_min_threads=16; rpc_port=9171; rpc_recv_buff_size_in_bytes=null; rpc_send_buff_size_in_bytes=null; rpc_server_type=sync; saved_caches_directory=target/embeddedCassandra/saved_caches; seed_provider=org.apache.cassandra.locator.SimpleSeedProvider{seeds=127.0.0.1}; server_encryption_options=<REDACTED>; slow_query_log_timeout_in_ms=500; snapshot_before_compaction=false; ssl_storage_port=7011; sstable_preemptive_open_interval_in_mb=50; start_native_transport=true; start_rpc=true; storage_port=7010; stream_throughput_outbound_megabits_per_sec=200; streaming_keep_alive_period_in_secs=300; streaming_socket_timeout_in_ms=86400000; thrift_framed_transport_size_in_mb=15; thrift_max_message_length_in_mb=16; thrift_prepared_statements_cache_size_mb=null; tombstone_failure_threshold=100000; tombstone_warn_threshold=1000; tracetype_query_ttl=86400; tracetype_repair_ttl=604800; transparent_data_encryption_options=org.apache.cassandra.config.TransparentDataEncryptionOptions@3e28d779; trickle_fsync=false; trickle_fsync_interval_in_kb=10240; truncate_request_timeout_in_ms=60000; unlogged_batch_across_partitions_warn_threshold=10; user_defined_function_fail_timeout=1500; user_defined_function_warn_timeout=500; user_function_timeout_policy=die; windows_timer_interval=0; write_request_timeout_in_ms=2000] 
+[2020-07-02 18:40:23,163] [INFO] o.a.c.config.DatabaseDescriptor:373 [] [main] [] - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap 
+[2020-07-02 18:40:23,164] [INFO] o.a.c.config.DatabaseDescriptor:431 [] [main] [] - Global memtable on-heap threshold is enabled at 455MB 
+[2020-07-02 18:40:23,164] [INFO] o.a.c.config.DatabaseDescriptor:435 [] [main] [] - Global memtable off-heap threshold is enabled at 455MB 
+[2020-07-02 18:40:23,499] [WARN] o.a.c.config.DatabaseDescriptor:673 [] [main] [] - index_interval has been deprecated and should be removed from cassandra.yaml 
+[2020-07-02 18:40:23,499] [WARN] o.a.c.config.DatabaseDescriptor:677 [] [main] [] - Please rename encryption_options as server_encryption_options in the yaml 
+[2020-07-02 18:40:23,574] [INFO] o.a.c.net.RateBasedBackPressure:123 [] [main] [] - Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000. 
+[2020-07-02 18:40:23,575] [INFO] o.a.c.config.DatabaseDescriptor:735 [] [main] [] - Back-pressure is disabled with strategy null. 
+[2020-07-02 18:40:24,054] [INFO] o.a.cassandra.db.commitlog.CommitLog:142 [] [main] [] - No commitlog files found; skipping replay 
+[2020-07-02 18:40:24,092] [INFO] o.a.c.service.CassandraDaemon:476 [] [pool-2-thread-1] [] - Hostname: gryffindoor.local 
+[2020-07-02 18:40:24,093] [INFO] o.a.c.service.CassandraDaemon:483 [] [pool-2-thread-1] [] - JVM vendor/version: Java HotSpot(TM) 64-Bit Server VM/1.8.0_181 
+[2020-07-02 18:40:24,094] [INFO] o.a.c.service.CassandraDaemon:484 [] [pool-2-thread-1] [] - Heap size: 182.500MiB/1.778GiB 
+[2020-07-02 18:40:24,095] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - Code Cache Non-heap memory: init = 2555904(2496K) used = 7984320(7797K) committed = 8060928(7872K) max = 251658240(245760K) 
+[2020-07-02 18:40:24,096] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - Metaspace Non-heap memory: init = 0(0K) used = 22669152(22137K) committed = 23199744(22656K) max = -1(-1K) 
+[2020-07-02 18:40:24,096] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - Compressed Class Space Non-heap memory: init = 0(0K) used = 2592584(2531K) committed = 2752512(2688K) max = 1073741824(1048576K) 
+[2020-07-02 18:40:24,096] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - PS Eden Space Heap memory: init = 34078720(33280K) used = 67108864(65536K) committed = 134217728(131072K) max = 705167360(688640K) 
+[2020-07-02 18:40:24,096] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - PS Survivor Space Heap memory: init = 5242880(5120K) used = 5741672(5607K) committed = 6815744(6656K) max = 6815744(6656K) 
+[2020-07-02 18:40:24,097] [INFO] o.a.c.service.CassandraDaemon:489 [] [pool-2-thread-1] [] - PS Old Gen Heap memory: init = 89653248(87552K) used = 6321520(6173K) committed = 89653248(87552K) max = 1431830528(1398272K) 
+[2020-07-02 18:40:24,097] [INFO] o.a.c.service.CassandraDaemon:491 [] [pool-2-thread-1] [] - Classpath: /Users/rajeshr/Projects/groups/service/target/test-classes:/Users/rajeshr/Projects/groups/service/target/classes:/Users/rajeshr/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar:/Users/rajeshr/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar:/Users/rajeshr/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.jar:/Users/rajeshr/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-guice_2.11/2.7.2/play-guice_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/google/inject/guice/4.2.2/guice-4.2.2.jar:/Users/rajeshr/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/rajeshr/.m2/repository/com/google/inject/extensions/guice-assistedinject/4.2.2/guice-assistedinject-4.2.2.jar:/Users/rajeshr/.m2/repository/org/sunbird/group-actors/1.0.0/group-actors-1.0.0.jar:/Users/rajeshr/.m2/repository/org/sunbird/sb-actor/1.0.0/sb-actor-1.0.0.jar:/Users/rajeshr/.m2/repository/org/sunbird/sb-utils/1.0.0/sb-utils-1.0.0.jar:/Users/rajeshr/.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar:/Users/rajeshr/.m2/repository/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar:/Users/rajeshr/.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar:/Users/rajeshr/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/rajeshr/.m2/repository/org/sunbird/sb-telemetry-utils/1.0.0/sb-telemetry-utils-1.0.0.jar:/Users/rajeshr/.m2/repository/org/apache/kafka/kafka-clients/0.10.0.1/kafka-clients-0.10.0.1.jar:/Users/rajeshr/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/Users/rajeshr/.m2/repository/org/xerial/snappy/snappy-java/1.1.2.6/snappy-java-1.1.2.6.jar:/Users/rajeshr/.m2/repository/com/typesafe/config/1.3.0/config-1.3.0.jar:/Users/rajeshr/.m2/repository/com/github/danielwegener/logback-kafka-appender/0.2.0-RC2/logback-kafka-appender-0.2.0-RC2.jar:/Users/rajeshr/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/rajeshr/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/rajeshr/.m2/repository/org/sunbird/cassandra-utils/1.0.0/cassandra-utils-1.0.0.jar:/Users/rajeshr/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.7.0/cassandra-driver-core-3.7.0-shaded.jar:/Users/rajeshr/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.2/metrics-core-3.2.2.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jnr-ffi/2.1.7/jnr-ffi-2.1.7.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jffi/1.2.16/jffi-1.2.16.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jffi/1.2.16/jffi-1.2.16-native.jar:/Users/rajeshr/.m2/repository/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar:/Users/rajeshr/.m2/repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar:/Users/rajeshr/.m2/repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar:/Users/rajeshr/.m2/repository/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jnr-posix/3.0.44/jnr-posix-3.0.44.jar:/Users/rajeshr/.m2/repository/com/github/jnr/jnr-constants/0.9.9/jnr-constants-0.9.9.jar:/Users/rajeshr/.m2/repository/com/datastax/cassandra/cassandra-driver-mapping/3.7.0/cassandra-driver-mapping-3.7.0.jar:/Users/rajeshr/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.7.0/cassandra-driver-core-3.7.0.jar:/Users/rajeshr/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play_2.11/2.7.2/play_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/build-link/2.7.2/build-link-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-exceptions/2.7.2/play-exceptions-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-streams_2.11/2.7.2/play-streams_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-stream_2.11/2.5.22/akka-stream_2.11-2.5.22.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-protobuf_2.11/2.5.22/akka-protobuf_2.11-2.5.22.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/twirl-api_2.11/1.4.0/twirl-api_2.11-1.4.0.jar:/Users/rajeshr/.m2/repository/org/scala-lang/modules/scala-xml_2.11/1.1.0/scala-xml_2.11-1.1.0.jar:/Users/rajeshr/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar:/Users/rajeshr/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.26/jcl-over-slf4j-1.7.26.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-actor_2.11/2.5.22/akka-actor_2.11-2.5.22.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-slf4j_2.11/2.5.22/akka-slf4j_2.11-2.5.22.jar:/Users/rajeshr/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8.jar:/Users/rajeshr/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-json_2.11/2.7.2/play-json_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-functional_2.11/2.7.2/play-functional_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/org/typelevel/macro-compat_2.11/1.1.1/macro-compat_2.11-1.1.1.jar:/Users/rajeshr/.m2/repository/joda-time/joda-time/2.10.1/joda-time-2.10.1.jar:/Users/rajeshr/.m2/repository/io/jsonwebtoken/jjwt/0.9.1/jjwt-0.9.1.jar:/Users/rajeshr/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/rajeshr/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/rajeshr/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/Users/rajeshr/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/rajeshr/.m2/repository/org/scala-lang/scala-reflect/2.11.12/scala-reflect-2.11.12.jar:/Users/rajeshr/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.11/0.9.0/scala-java8-compat_2.11-0.9.0.jar:/Users/rajeshr/.m2/repository/com/typesafe/ssl-config-core_2.11/0.3.7/ssl-config-core_2.11-0.3.7.jar:/Users/rajeshr/.m2/repository/org/scala-lang/modules/scala-parser-combinators_2.11/1.1.1/scala-parser-combinators_2.11-1.1.1.jar:/Users/rajeshr/.m2/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar:/Users/rajeshr/.m2/repository/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar:/Users/rajeshr/.m2/repository/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar:/Users/rajeshr/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/rajeshr/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-testkit_2.11/2.5.19/akka-testkit_2.11-2.5.19.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-logback_2.11/2.7.2/play-logback_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-module-junit4/1.6.5/powermock-module-junit4-1.6.5.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-module-junit4-common/1.6.5/powermock-module-junit4-common-1.6.5.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-core/1.6.5/powermock-core-1.6.5.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-reflect/1.6.5/powermock-reflect-1.6.5.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-api-mockito/1.6.5/powermock-api-mockito-1.6.5.jar:/Users/rajeshr/.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar:/Users/rajeshr/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/Users/rajeshr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-api-mockito-common/1.6.5/powermock-api-mockito-common-1.6.5.jar:/Users/rajeshr/.m2/repository/org/powermock/powermock-api-support/1.6.5/powermock-api-support-1.6.5.jar:/Users/rajeshr/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/filters-helpers_2.11/2.7.2/filters-helpers_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-akka-http-server_2.11/2.7.2/play-akka-http-server_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-server_2.11/2.7.2/play-server_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-http-core_2.11/10.1.8/akka-http-core_2.11-10.1.8.jar:/Users/rajeshr/.m2/repository/com/typesafe/akka/akka-parsing_2.11/10.1.8/akka-parsing_2.11-10.1.8.jar:/Users/rajeshr/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-test_2.11/2.7.2/play-test_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.7.2/play-netty-server_2.11-2.7.2.jar:/Users/rajeshr/.m2/repository/com/typesafe/netty/netty-reactive-streams-http/2.0.3/netty-reactive-streams-http-2.0.3.jar:/Users/rajeshr/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.3/netty-reactive-streams-2.0.3.jar:/Users/rajeshr/.m2/repository/io/netty/netty-handler/4.1.34.Final/netty-handler-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-codec-http/4.1.34.Final/netty-codec-http-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-codec/4.1.34.Final/netty-codec-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-transport-native-epoll/4.1.34.Final/netty-transport-native-epoll-4.1.34.Final-linux-x86_64.jar:/Users/rajeshr/.m2/repository/io/netty/netty-common/4.1.34.Final/netty-common-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-buffer/4.1.34.Final/netty-buffer-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-transport/4.1.34.Final/netty-transport-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-resolver/4.1.34.Final/netty-resolver-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.34.Final/netty-transport-native-unix-common-4.1.34.Final.jar:/Users/rajeshr/.m2/repository/com/novocode/junit-interface/0.11/junit-interface-0.11.jar:/Users/rajeshr/.m2/repository/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar:/Users/rajeshr/.m2/repository/com/google/guava/guava/27.1-jre/guava-27.1-jre.jar:/Users/rajeshr/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/rajeshr/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/rajeshr/.m2/repository/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar:/Users/rajeshr/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:/Users/rajeshr/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/rajeshr/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/Users/rajeshr/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/rajeshr/.m2/repository/org/fluentlenium/fluentlenium-core/3.7.1/fluentlenium-core-3.7.1.jar:/Users/rajeshr/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/rajeshr/.m2/repository/org/atteo/classindex/classindex/3.4/classindex-3.4.jar:/Users/rajeshr/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/rajeshr/.m2/repository/org/seleniumhq/selenium/htmlunit-driver/2.33.3/htmlunit-driver-2.33.3.jar:/Users/rajeshr/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.33/htmlunit-2.33.jar:/Users/rajeshr/.m2/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar:/Users/rajeshr/.m2/repository/xalan/serializer/2.7.2/serializer-2.7.2.jar:/Users/rajeshr/.m2/repository/org/apache/commons/commons-text/1.4/commons-text-1.4.jar:/Users/rajeshr/.m2/repository/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.jar:/Users/rajeshr/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.33/htmlunit-core-js-2.33.jar:/Users/rajeshr/.m2/repository/net/sourceforge/htmlunit/neko-htmlunit/2.33/neko-htmlunit-2.33.jar:/Users/rajeshr/.m2/repository/xerces/xercesImpl/2.12.0/xercesImpl-2.12.0.jar:/Users/rajeshr/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/rajeshr/.m2/repository/net/sourceforge/htmlunit/htmlunit-cssparser/1.2.0/htmlunit-cssparser-1.2.0.jar:/Users/rajeshr/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.4.12.v20180830/websocket-client-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/jetty-client/9.4.12.v20180830/jetty-client-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/jetty-http/9.4.12.v20180830/jetty-http-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.12.v20180830/jetty-xml-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/jetty-util/9.4.12.v20180830/jetty-util-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/jetty-io/9.4.12.v20180830/jetty-io-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.4.12.v20180830/websocket-common-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.4.12.v20180830/websocket-api-9.4.12.v20180830.jar:/Users/rajeshr/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/rajeshr/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/rajeshr/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/rajeshr/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/rajeshr/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/rajeshr/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/rajeshr/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/rajeshr/.m2/repository/org/cassandraunit/cassandra-unit/3.11.2.0/cassandra-unit-3.11.2.0.jar:/Users/rajeshr/.m2/repository/org/apache/cassandra/cassandra-all/3.11.4/cassandra-all-3.11.4.jar:/Users/rajeshr/.m2/repository/com/ning/compress-lzf/0.8.4/compress-lzf-0.8.4.jar:/Users/rajeshr/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/Users/rajeshr/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar:/Users/rajeshr/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar:/Users/rajeshr/.m2/repository/org/antlr/antlr/3.5.2/antlr-3.5.2.jar:/Users/rajeshr/.m2/repository/org/antlr/ST4/4.0.8/ST4-4.0.8.jar:/Users/rajeshr/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/rajeshr/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/Users/rajeshr/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/Users/rajeshr/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/rajeshr/.m2/repository/com/boundary/high-scale-lib/1.0.6/high-scale-lib-1.0.6.jar:/Users/rajeshr/.m2/repository/org/yaml/snakeyaml/1.11/snakeyaml-1.11.jar:/Users/rajeshr/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/Users/rajeshr/.m2/repository/io/airlift/airline/0.6/airline-0.6.jar:/Users/rajeshr/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar:/Users/rajeshr/.m2/repository/com/addthis/metrics/reporter-config3/3.0.3/reporter-config3-3.0.3.jar:/Users/rajeshr/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.3/reporter-config-base-3.0.3.jar:/Users/rajeshr/.m2/repository/com/thinkaurelius/thrift/thrift-server/0.3.7/thrift-server-0.3.7.jar:/Users/rajeshr/.m2/repository/com/lmax/disruptor/3.0.1/disruptor-3.0.1.jar:/Users/rajeshr/.m2/repository/com/clearspring/analytics/stream/2.5.2/stream-2.5.2.jar:/Users/rajeshr/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar:/Users/rajeshr/.m2/repository/org/apache/cassandra/cassandra-thrift/3.11.4/cassandra-thrift-3.11.4.jar:/Users/rajeshr/.m2/repository/de/jflex/jflex/1.6.0/jflex-1.6.0.jar:/Users/rajeshr/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/rajeshr/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/Users/rajeshr/.m2/repository/com/github/rholder/snowball-stemmer/1.3.0.581.1/snowball-stemmer-1.3.0.581.1.jar:/Users/rajeshr/.m2/repository/com/googlecode/concurrent-trees/concurrent-trees/2.4.0/concurrent-trees-2.4.0.jar:/Users/rajeshr/.m2/repository/com/github/jbellis/jamm/0.3.0/jamm-0.3.0.jar:/Users/rajeshr/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/rajeshr/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar:/Users/rajeshr/.m2/repository/org/caffinitas/ohc/ohc-core/0.4.4/ohc-core-0.4.4.jar:/Users/rajeshr/.m2/repository/org/caffinitas/ohc/ohc-core-j8/0.4.4/ohc-core-j8-0.4.4.jar:/Users/rajeshr/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.2.6/caffeine-2.2.6.jar:/Users/rajeshr/.m2/repository/org/jctools/jctools-core/1.2.1/jctools-core-1.2.1.jar:/Users/rajeshr/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/Users/rajeshr/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/Users/rajeshr/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/rajeshr/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/Users/rajeshr/.m2/repository/org/hyperic/sigar/1.6.4/sigar-1.6.4.jar: 
+[2020-07-02 18:40:24,098] [INFO] o.a.c.service.CassandraDaemon:493 [] [pool-2-thread-1] [] - JVM Arguments: [-javaagent:/Users/rajeshr/.m2/repository/org/jacoco/org.jacoco.agent/0.8.4/org.jacoco.agent-0.8.4-runtime.jar=destfile=/Users/rajeshr/Projects/groups/service/target/coverage-reports/jacoco-unit.exec,excludes=**/common/**:**/router/**:**/Reverse*/**:**/routes.*:**/routes$javascript.**] 
+[2020-07-02 18:40:24,099] [WARN] o.a.cassandra.service.StartupChecks:136 [] [pool-2-thread-1] [] - jemalloc shared library could not be preloaded to speed up memory allocations 
+[2020-07-02 18:40:24,099] [WARN] o.a.cassandra.service.StartupChecks:169 [] [pool-2-thread-1] [] - JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info. 
+[2020-07-02 18:40:24,099] [ERROR] o.a.cassandra.service.StartupChecks:172 [] [pool-2-thread-1] [] - cassandra.jmx.local.port missing from cassandra-env.sh, unable to start local JMX service. 
+[2020-07-02 18:40:24,101] [WARN] o.a.cassandra.service.StartupChecks:220 [] [pool-2-thread-1] [] - The JVM is not configured to stop on OutOfMemoryError which can cause data corruption. Use one of the following JVM options to configure the behavior on OutOfMemoryError:  -XX:+ExitOnOutOfMemoryError, -XX:+CrashOnOutOfMemoryError, or -XX:OnOutOfMemoryError="<cmd args>;<cmd args>" 
+[2020-07-02 18:40:24,105] [INFO] o.a.cassandra.utils.SigarLibrary:44 [] [pool-2-thread-1] [] - Initializing SIGAR library 
+[2020-07-02 18:40:24,138] [INFO] o.a.cassandra.utils.SigarLibrary:57 [] [pool-2-thread-1] [] - Could not initialize SIGAR library org.hyperic.sigar.Sigar.getFileSystemListNative()[Lorg/hyperic/sigar/FileSystem;  
+[2020-07-02 18:40:24,139] [INFO] o.a.cassandra.utils.SigarLibrary:185 [] [pool-2-thread-1] [] - Sigar could not be initialized, test for checking degraded mode omitted. 
+[2020-07-02 18:40:24,339] [INFO] o.a.cassandra.cql3.QueryProcessor:116 [] [pool-2-thread-1] [] - Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift) 
+[2020-07-02 18:40:25,461] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.IndexInfo 
+[2020-07-02 18:40:26,378] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.batches 
+[2020-07-02 18:40:26,385] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.paxos 
+[2020-07-02 18:40:26,398] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.local 
+[2020-07-02 18:40:26,405] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.peers 
+[2020-07-02 18:40:26,412] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.peer_events 
+[2020-07-02 18:40:26,420] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.range_xfers 
+[2020-07-02 18:40:26,427] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.compaction_history 
+[2020-07-02 18:40:26,434] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.sstable_activity 
+[2020-07-02 18:40:26,441] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.size_estimates 
+[2020-07-02 18:40:26,446] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.available_ranges 
+[2020-07-02 18:40:26,453] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.transferred_ranges 
+[2020-07-02 18:40:26,458] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.views_builds_in_progress 
+[2020-07-02 18:40:26,464] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.built_views 
+[2020-07-02 18:40:26,471] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.hints 
+[2020-07-02 18:40:26,478] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.batchlog 
+[2020-07-02 18:40:26,484] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.prepared_statements 
+[2020-07-02 18:40:26,493] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_keyspaces 
+[2020-07-02 18:40:26,497] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_columnfamilies 
+[2020-07-02 18:40:26,501] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_columns 
+[2020-07-02 18:40:26,506] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_triggers 
+[2020-07-02 18:40:26,511] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_usertypes 
+[2020-07-02 18:40:26,516] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_functions 
+[2020-07-02 18:40:26,523] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system.schema_aggregates 
+[2020-07-02 18:40:26,525] [INFO] o.a.cassandra.db.view.ViewManager:137 [] [pool-2-thread-1] [] - Not submitting build tasks for views in keyspace system as storage service is not initialized 
+[2020-07-02 18:40:26,749] [INFO] o.a.c.db.monitoring.ApproximateTime:44 [] [pool-2-thread-1] [] - Scheduling approximate time-check task with a precision of 10 milliseconds 
+[2020-07-02 18:40:26,814] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.keyspaces 
+[2020-07-02 18:40:26,820] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.tables 
+[2020-07-02 18:40:26,828] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.columns 
+[2020-07-02 18:40:26,833] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.triggers 
+[2020-07-02 18:40:26,841] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.dropped_columns 
+[2020-07-02 18:40:26,848] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.views 
+[2020-07-02 18:40:26,854] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.types 
+[2020-07-02 18:40:26,859] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.functions 
+[2020-07-02 18:40:26,874] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.aggregates 
+[2020-07-02 18:40:26,879] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [pool-2-thread-1] [] - Initializing system_schema.indexes 
+[2020-07-02 18:40:26,881] [INFO] o.a.cassandra.db.view.ViewManager:137 [] [pool-2-thread-1] [] - Not submitting build tasks for views in keyspace system_schema as storage service is not initialized 
+[2020-07-02 18:40:27,167] [INFO] o.a.cassandra.service.CacheService:100 [] [pool-2-thread-1] [] - Initializing key cache with capacity of 7 MBs. 
+[2020-07-02 18:40:27,195] [INFO] o.a.cassandra.service.CacheService:122 [] [pool-2-thread-1] [] - Initializing row cache with capacity of 0 MBs 
+[2020-07-02 18:40:27,200] [INFO] o.a.cassandra.service.CacheService:151 [] [pool-2-thread-1] [] - Initializing counter cache with capacity of 3 MBs 
+[2020-07-02 18:40:27,202] [INFO] o.a.cassandra.service.CacheService:162 [] [pool-2-thread-1] [] - Scheduling counter cache save to every 7200 seconds (going to save all keys). 
+[2020-07-02 18:40:27,246] [INFO] o.a.cassandra.service.StorageService:619 [] [pool-2-thread-1] [] - Populating token metadata from system tables 
+[2020-07-02 18:40:27,283] [INFO] o.a.cassandra.service.StorageService:626 [] [pool-2-thread-1] [] - Token metadata:  
+[2020-07-02 18:40:27,418] [INFO] o.a.cassandra.db.commitlog.CommitLog:142 [] [pool-2-thread-1] [] - No commitlog files found; skipping replay 
+[2020-07-02 18:40:27,419] [INFO] o.a.cassandra.service.StorageService:619 [] [pool-2-thread-1] [] - Populating token metadata from system tables 
+[2020-07-02 18:40:27,432] [INFO] o.a.cassandra.service.StorageService:626 [] [pool-2-thread-1] [] - Token metadata:  
+[2020-07-02 18:40:27,567] [INFO] o.a.cassandra.cql3.QueryProcessor:163 [] [pool-2-thread-1] [] - Preloaded 0 prepared statements 
+[2020-07-02 18:40:27,568] [INFO] o.a.cassandra.service.StorageService:637 [] [pool-2-thread-1] [] - Cassandra version: 3.11.4 
+[2020-07-02 18:40:27,568] [INFO] o.a.cassandra.service.StorageService:638 [] [pool-2-thread-1] [] - Thrift API version: 20.1.0 
+[2020-07-02 18:40:27,569] [INFO] o.a.cassandra.service.StorageService:639 [] [pool-2-thread-1] [] - CQL supported versions: 3.4.4 (default: 3.4.4) 
+[2020-07-02 18:40:27,569] [INFO] o.a.cassandra.service.StorageService:641 [] [pool-2-thread-1] [] - Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4) 
+[2020-07-02 18:40:27,646] [INFO] o.a.c.io.sstable.IndexSummaryManager:80 [] [pool-2-thread-1] [] - Initializing index summary manager with a memory pool size of 7 MB and a resize interval of 60 minutes 
+[2020-07-02 18:40:27,669] [INFO] o.a.cassandra.net.MessagingService:750 [] [pool-2-thread-1] [] - Starting Messaging Service on /127.0.0.1:7010 (lo0) 
+[2020-07-02 18:40:27,675] [WARN] o.apache.cassandra.db.SystemKeyspace:1087 [] [pool-2-thread-1] [] - No host ID found, created d8bb696f-42d0-40a9-b924-d08acc804654 (Note: This should happen exactly once per node). 
+[2020-07-02 18:40:27,776] [INFO] o.a.cassandra.service.StorageService:569 [] [pool-2-thread-1] [] - Unable to gossip with any peers but continuing anyway since node is in its own seed list 
+[2020-07-02 18:40:27,795] [INFO] o.a.cassandra.service.StorageService:723 [] [pool-2-thread-1] [] - Loading persisted ring state 
+[2020-07-02 18:40:27,796] [INFO] o.a.cassandra.service.StorageService:841 [] [pool-2-thread-1] [] - Starting up server gossip 
+[2020-07-02 18:40:27,828] [INFO] o.a.cassandra.service.StorageService:902 [] [pool-2-thread-1] [] - This node will not auto bootstrap because it is configured to be a seed node. 
+[2020-07-02 18:40:27,837] [WARN] o.apache.cassandra.dht.BootStrapper:180 [] [pool-2-thread-1] [] - Picking random token for a single vnode.  You should probably add more vnodes and/or use the automatic token allocation mechanism. 
+[2020-07-02 18:40:27,837] [INFO] o.apache.cassandra.dht.BootStrapper:228 [] [pool-2-thread-1] [] - Generated random tokens. tokens are [2102131483807328031] 
+[2020-07-02 18:40:27,844] [INFO] o.a.c.service.MigrationManager:337 [] [pool-2-thread-1] [] - Create new Keyspace: KeyspaceMetadata{name=system_traces, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=2}}, tables=[org.apache.cassandra.config.CFMetaData@4e717f84[cfId=c5e99f16-8677-3914-b17e-960613512345,ksName=system_traces,cfName=sessions,flags=[COMPOUND],params=TableParams{comment=tracing sessions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [client command coordinator duration request started_at parameters]],partitionKeyColumns=[session_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[client, command, session_id, coordinator, request, started_at, duration, parameters],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@34163a06[cfId=8826e8e9-e16a-3728-8753-3bc1fc713c25,ksName=system_traces,cfName=events,flags=[COMPOUND],params=TableParams{comment=tracing events, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [activity source source_elapsed thread]],partitionKeyColumns=[session_id],clusteringColumns=[event_id],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[activity, session_id, thread, event_id, source, source_elapsed],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]} 
+[2020-07-02 18:40:27,935] [INFO] o.a.cassandra.db.view.ViewManager:137 [] [MigrationStage:1] [] - Not submitting build tasks for views in keyspace system_traces as storage service is not initialized 
+[2020-07-02 18:40:27,940] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_traces.events 
+[2020-07-02 18:40:27,946] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_traces.sessions 
+[2020-07-02 18:40:27,973] [INFO] o.a.c.service.MigrationManager:337 [] [pool-2-thread-1] [] - Create new Keyspace: KeyspaceMetadata{name=system_distributed, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=3}}, tables=[org.apache.cassandra.config.CFMetaData@53354b89[cfId=759fffad-624b-3181-80ee-fa9a52d1f627,ksName=system_distributed,cfName=repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [coordinator exception_message exception_stacktrace finished_at parent_id range_begin range_end started_at status participants]],partitionKeyColumns=[keyspace_name, columnfamily_name],clusteringColumns=[id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[status, id, coordinator, finished_at, participants, exception_stacktrace, parent_id, range_end, range_begin, exception_message, keyspace_name, started_at, columnfamily_name],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@75446d44[cfId=deabd734-b99d-3b9c-92e5-fd92eb5abf14,ksName=system_distributed,cfName=parent_repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [exception_message exception_stacktrace finished_at keyspace_name started_at columnfamily_names options requested_ranges successful_ranges]],partitionKeyColumns=[parent_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.TimeUUIDType,columnMetadata=[requested_ranges, exception_message, keyspace_name, successful_ranges, started_at, finished_at, options, exception_stacktrace, parent_id, columnfamily_names],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@31b7b29d[cfId=5582b59f-8e4e-35e1-b913-3acada51eb04,ksName=system_distributed,cfName=view_build_status,flags=[COMPOUND],params=TableParams{comment=Materialized View build status, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UUIDType),partitionColumns=[[] | [status]],partitionKeyColumns=[keyspace_name, view_name],clusteringColumns=[host_id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[view_name, status, keyspace_name, host_id],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]} 
+[2020-07-02 18:40:27,997] [INFO] o.a.cassandra.db.view.ViewManager:137 [] [MigrationStage:1] [] - Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized 
+[2020-07-02 18:40:28,001] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_distributed.parent_repair_history 
+[2020-07-02 18:40:28,005] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_distributed.repair_history 
+[2020-07-02 18:40:28,008] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_distributed.view_build_status 
+[2020-07-02 18:40:28,021] [INFO] o.a.cassandra.service.StorageService:1483 [] [pool-2-thread-1] [] - JOINING: Finish joining ring 
+[2020-07-02 18:40:28,059] [INFO] o.a.c.service.MigrationManager:337 [] [pool-2-thread-1] [] - Create new Keyspace: KeyspaceMetadata{name=system_auth, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[org.apache.cassandra.config.CFMetaData@7db9e57[cfId=5bc52802-de25-35ed-aeab-188eecebb090,ksName=system_auth,cfName=roles,flags=[COMPOUND],params=TableParams{comment=role definitions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [can_login is_superuser salted_hash member_of]],partitionKeyColumns=[role],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[salted_hash, member_of, role, can_login, is_superuser],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@4958dcba[cfId=0ecdaa87-f8fb-3e60-88d1-74fb36fe5c0d,ksName=system_auth,cfName=role_members,flags=[COMPOUND],params=TableParams{comment=role memberships lookup table, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[role],clusteringColumns=[member],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[role, member],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@7cb5383[cfId=3afbe79f-2194-31a7-add7-f5ab90d8ec9c,ksName=system_auth,cfName=role_permissions,flags=[COMPOUND],params=TableParams{comment=permissions granted to db roles, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | [permissions]],partitionKeyColumns=[role],clusteringColumns=[resource],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, permissions, role],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@6de2524f[cfId=5f2fbdad-91f1-3946-bd25-d5da3a5c35ec,ksName=system_auth,cfName=resource_role_permissons_index,flags=[COMPOUND],params=TableParams{comment=index of db roles with permissions granted on a resource, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[resource],clusteringColumns=[role],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, role],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]} 
+[2020-07-02 18:40:28,083] [INFO] o.a.cassandra.db.view.ViewManager:137 [] [MigrationStage:1] [] - Not submitting build tasks for views in keyspace system_auth as storage service is not initialized 
+[2020-07-02 18:40:28,087] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_auth.resource_role_permissons_index 
+[2020-07-02 18:40:28,097] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_auth.role_members 
+[2020-07-02 18:40:28,102] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_auth.role_permissions 
+[2020-07-02 18:40:28,107] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing system_auth.roles 
+[2020-07-02 18:40:28,416] [INFO] o.a.c.service.NativeTransportService:75 [] [pool-2-thread-1] [] - Netty using Java NIO event loop 
+[2020-07-02 18:40:28,633] [INFO] o.apache.cassandra.transport.Server:155 [] [pool-2-thread-1] [] - Using Netty Version: [netty-buffer=netty-buffer-4.1.34.Final.ff7a9fa, netty-codec=netty-codec-4.1.34.Final.ff7a9fa, netty-codec-http=netty-codec-http-4.1.34.Final.ff7a9fa, netty-common=netty-common-4.1.34.Final.ff7a9fa, netty-handler=netty-handler-4.1.34.Final.ff7a9fa, netty-resolver=netty-resolver-4.1.34.Final.ff7a9fa, netty-transport=netty-transport-4.1.34.Final.ff7a9fa, netty-transport-native-epoll=netty-transport-native-epoll-4.1.34.Final.ff7a9fa, netty-transport-native-unix-common=netty-transport-native-unix-common-4.1.34.Final.ff7a9fa091] 
+[2020-07-02 18:40:28,634] [INFO] o.apache.cassandra.transport.Server:156 [] [pool-2-thread-1] [] - Starting listening for CQL clients on localhost/127.0.0.1:9142 (unencrypted)... 
+[2020-07-02 18:40:28,832] [INFO] o.a.cassandra.thrift.ThriftServer:116 [] [pool-2-thread-1] [] - Binding thrift service to localhost/127.0.0.1:9171 
+[2020-07-02 18:40:28,853] [INFO] o.a.cassandra.thrift.ThriftServer:133 [] [Thread-3] [] - Listening for thrift clients... 
+[2020-07-02 18:40:28,864] [INFO] com.datastax.driver.core:261 [] [main] [] - DataStax Java driver 3.7.0 for Apache Cassandra 
+[2020-07-02 18:40:28,868] [INFO] c.d.driver.core.GuavaCompatibility:185 [] [main] [] - Detected Guava >= 19 in the classpath, using modern compatibility layer 
+[2020-07-02 18:40:29,305] [INFO] c.datastax.driver.core.ClockFactory:57 [] [main] [] - Using native clock to generate timestamps. 
+[2020-07-02 18:40:29,529] [INFO] com.datastax.driver.core.NettyUtil:84 [] [main] [] - Detected shaded Netty classes in the classpath; native epoll transport will not work properly, defaulting to NIO. 
+[2020-07-02 18:40:30,189] [WARN] com.datastax.driver.core.Cluster:2323 [] [main] [] - You listed localhost/0:0:0:0:0:0:0:1:9142 in your contact points, but it wasn't found in the control host's system.peers at startup 
+[2020-07-02 18:40:30,348] [INFO] c.d.d.c.p.DCAwareRoundRobinPolicy:110 [] [main] [] - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor) 
+[2020-07-02 18:40:30,349] [INFO] com.datastax.driver.core.Cluster:1621 [] [main] [] - New Cassandra host localhost/127.0.0.1:9142 added 
+[2020-07-02 18:40:30,425] [INFO] o.a.c.service.MigrationManager:337 [] [Native-Transport-Requests-2] [] - Create new Keyspace: KeyspaceMetadata{name=sunbird, params=KeyspaceParams{durable_writes=false, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[], views=[], functions=[], types=[]} 
+[2020-07-02 18:40:30,497] [INFO] o.a.c.service.MigrationManager:382 [] [Native-Transport-Requests-5] [] - Create new table: org.apache.cassandra.config.CFMetaData@3716ba38[cfId=67a77d10-bc65-11ea-8b52-79e9341adb1c,ksName=sunbird,cfName=group,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@92c60a70, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [createdby createdon description membershiptype name status updatedby updatedon activities]],partitionKeyColumns=[id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[createdby, status, updatedon, id, membershiptype, activities, createdon, name, updatedby, description],droppedColumns={},triggers=[],indexes=[]] 
+[2020-07-02 18:40:30,515] [INFO] o.a.cassandra.db.ColumnFamilyStore:430 [] [MigrationStage:1] [] - Initializing sunbird.group 
+Group-service started embedded cassandra successfully
+[DEBUG] [07/02/2020 18:40:34.321] [main] [EventStream] StandardOutLogger started
+[DEBUG] [07/02/2020 18:40:36.196] [thisActorSystem-akka.actor.default-dispatcher-2] [akka://thisActorSystem/] started (akka.actor.LocalActorRefProvider$Guardian@1b6e8035)
+[DEBUG] [07/02/2020 18:40:36.268] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/user] started (akka.actor.LocalActorRefProvider$Guardian@2a5ad2ed)
+[DEBUG] [07/02/2020 18:40:36.276] [thisActorSystem-akka.actor.default-dispatcher-2] [akka://thisActorSystem/] now supervising Actor[akka://thisActorSystem/user]
+[DEBUG] [07/02/2020 18:40:36.277] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/system] started (akka.actor.LocalActorRefProvider$SystemGuardian@465e5e46)
+[DEBUG] [07/02/2020 18:40:36.277] [thisActorSystem-akka.actor.default-dispatcher-2] [akka://thisActorSystem/] now supervising Actor[akka://thisActorSystem/system]
+[DEBUG] [07/02/2020 18:40:36.292] [thisActorSystem-akka.actor.default-dispatcher-2] [akka://thisActorSystem/system] now watched by Actor[akka://thisActorSystem/]
+[DEBUG] [07/02/2020 18:40:36.292] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/user] now watched by Actor[akka://thisActorSystem/system]
+[DEBUG] [07/02/2020 18:40:36.316] [thisActorSystem-akka.actor.default-dispatcher-2] [akka://thisActorSystem/system] now supervising Actor[akka://thisActorSystem/system/log1-Slf4jLogger#1010525625]
+[DEBUG] [07/02/2020 18:40:36.318] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/system/log1-Slf4jLogger] started (akka.event.slf4j.Slf4jLogger@791f5d0f)
+[2020-07-02 18:40:36,432] [INFO] akka.event.slf4j.Slf4jLogger:101 [] [thisActorSystem-akka.actor.default-dispatcher-3] [] - Slf4jLogger started 
+[DEBUG] [07/02/2020 18:40:36.445] [main] [EventStream] subscribing Actor[akka://thisActorSystem/system/log1-Slf4jLogger#1010525625] to channel class akka.event.Logging$Error
+[DEBUG] [07/02/2020 18:40:36.446] [main] [EventStream] subscribing Actor[akka://thisActorSystem/system/log1-Slf4jLogger#1010525625] to channel class akka.event.Logging$Warning
+[DEBUG] [07/02/2020 18:40:36.446] [main] [EventStream] subscribing Actor[akka://thisActorSystem/system/log1-Slf4jLogger#1010525625] to channel class akka.event.Logging$Info
+[DEBUG] [07/02/2020 18:40:36.447] [main] [EventStream(akka://thisActorSystem)] logger log1-Slf4jLogger started
+[DEBUG] [07/02/2020 18:40:36.459] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/system] now supervising Actor[akka://thisActorSystem/system/UnhandledMessageForwarder#1713453704]
+[DEBUG] [07/02/2020 18:40:36.462] [thisActorSystem-akka.actor.default-dispatcher-3] [akka://thisActorSystem/system/UnhandledMessageForwarder] started (akka.event.LoggingBus$$anonfun$startDefaultLoggers$2$$anon$3@2b3dc815)
+[DEBUG] [07/02/2020 18:40:36.463] [main] [EventStream] subscribing Actor[akka://thisActorSystem/system/UnhandledMessageForwarder#1713453704] to channel class akka.actor.UnhandledMessage
+[DEBUG] [07/02/2020 18:40:36.467] [main] [EventStream(akka://thisActorSystem)] Default Loggers started
+[2020-07-02 18:40:36,953] [INFO] org.reflections.Reflections:229 [] [main] [] - Reflections took 197 ms to scan 5 urls, producing 22 keys and 51 values  
+[2020-07-02 18:40:37,014] [INFO] o.s.h.CassandraConnectionManagerImpl:163 [] [main] [] - Cassandra ShutDownHook registered. 
+[2020-07-02 18:40:37,036] [INFO] o.s.h.CassandraConnectionManagerImpl:104 [] [main] [] - sunbird_cassandra_port is not set. Checking test run... 
+[2020-07-02 18:40:37,036] [INFO] c.datastax.driver.core.ClockFactory:57 [] [main] [] - Using native clock to generate timestamps. 
+[2020-07-02 18:40:37,038] [INFO] o.s.h.CassandraConnectionManagerImpl:137 [] [main] [] - CassandraConnectionManagerImpl:getConsistencyLevel: level = null 
+[2020-07-02 18:40:37,038] [INFO] o.s.h.CassandraConnectionManagerImpl:123 [] [main] [] - CassandraConnectionManagerImpl:createCluster: Consistency level = null 
+[2020-07-02 18:40:37,163] [WARN] com.datastax.driver.core.Cluster:2323 [] [main] [] - You listed localhost/0:0:0:0:0:0:0:1:9142 in your contact points, but it wasn't found in the control host's system.peers at startup 
+[2020-07-02 18:40:37,266] [INFO] c.d.d.c.p.DCAwareRoundRobinPolicy:110 [] [main] [] - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor) 
+[2020-07-02 18:40:37,277] [INFO] com.datastax.driver.core.Cluster:1621 [] [main] [] - New Cassandra host localhost/127.0.0.1:9142 added 
+[2020-07-02 18:40:37,282] [INFO] o.s.h.CassandraConnectionManagerImpl:83 [] [main] [] - Connected to cluster: Test Cluster 
+[2020-07-02 18:40:37,282] [INFO] o.s.h.CassandraConnectionManagerImpl:90 [] [main] [] - Datacenter: datacenter1; Host: localhost/127.0.0.1; Rack: rack1 
+[2020-07-02 18:40:37,464] [ERROR] utils.module.ErrorHandler:26 [] [main] [] - Error handler called 
+[2020-07-02 18:40:38,282] [WARN] o.apache.cassandra.utils.FBUtilities:323 [] [OptionalTasks:1] [] - Trigger directory doesn't exist, please create it and try again. 
+[2020-07-02 18:40:38,292] [INFO] o.a.c.auth.CassandraRoleManager:356 [] [OptionalTasks:1] [] - Created default superuser role 'cassandra' 
+[2020-07-02 18:40:38,434] [INFO] akka.event.slf4j.Slf4jLogger:101 [] [application-akka.actor.default-dispatcher-4] [] - Slf4jLogger started 
+[2020-07-02 18:40:40,290] [INFO] v.GroupCreateRequestValidator:16 [] [application-akka.actor.default-dispatcher-4] [] - GroupCreateRequestValidator:started validating the request with request{} 
+[2020-07-02 18:40:40,294] [ERROR] validators.ValidationUtil:18 [] [application-akka.actor.default-dispatcher-4] [] - validateMandatoryParamsOfStringType:incorrect request provided 
+[2020-07-02 18:40:40,446] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-4] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,489] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-4] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,412] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-4] [] - {"eid":"LOG","ets":1593695440381,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/v1/group/create"},{"method":"POST"},{"status":400},{"duration":1092}]}} 
+[2020-07-02 18:40:40,511] [INFO] v.GroupCreateRequestValidator:16 [] [application-akka.actor.default-dispatcher-3] [] - GroupCreateRequestValidator:started validating the request with request{name=group} 
+[2020-07-02 18:40:40,524] [INFO] org.sunbird.actors.CreateGroupActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - createGroup started at 1593695440520 
+[2020-07-02 18:40:40,527] [INFO] o.s.c.CassandraOperationImpl:57 [] [thisActorSystem-default-dispatcher-11] [] - Cassandra Service insertRecord method started at == 1593695440527 
+[2020-07-02 18:40:40,528] [INFO] org.sunbird.actors.CreateGroupActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - CreateGroup method call 
+[2020-07-02 18:40:40,531] [INFO] org.sunbird.common.CassandraUtil:63 [] [thisActorSystem-default-dispatcher-11] [] - INSERT INTO sunbird.group(id,name) VALUES (?,?); 
+[2020-07-02 18:40:40,619] [INFO] o.s.c.CassandraOperationImpl:737 [] [thisActorSystem-default-dispatcher-11] [] - Cassandra operation insertRecord started at 1,593,695,440,527 and completed at 1,593,695,440,616. Total time elapsed is 89. 
+[2020-07-02 18:40:40,621] [INFO] org.sunbird.actors.CreateGroupActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - createGroup ended at 1593695440620 
+[2020-07-02 18:40:40,623] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-3] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,623] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-3] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,622] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-3] [] - {"eid":"LOG","ets":1593695440621,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/v1/group/create"},{"method":"POST"},{"status":200},{"duration":114}]}} 
+[2020-07-02 18:40:40,640] [INFO] v.GroupCreateRequestValidator:16 [] [application-akka.actor.default-dispatcher-2] [] - GroupCreateRequestValidator:started validating the request with request{description=group} 
+[2020-07-02 18:40:40,643] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-2] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,644] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-2] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,643] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-2] [] - {"eid":"LOG","ets":1593695440642,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/v1/group/create"},{"method":"POST"},{"status":400},{"duration":13}]}} 
+[2020-07-02 18:40:40,666] [INFO] v.GroupCreateRequestValidator:16 [] [application-akka.actor.default-dispatcher-2] [] - GroupCreateRequestValidator:started validating the request with request{name=123} 
+[2020-07-02 18:40:40,666] [ERROR] validators.ValidationUtil:32 [] [application-akka.actor.default-dispatcher-2] [] - validateMandatoryParamsOfStringType:incorrect request provided 
+[2020-07-02 18:40:40,669] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-2] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,669] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-2] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,668] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-2] [] - {"eid":"LOG","ets":1593695440668,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/v1/group/create"},{"method":"POST"},{"status":400},{"duration":11}]}} 
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.735 sec - in controllers.CreateGroupControllerTest
+Running controllers.HealthControllerTest
+[2020-07-02 18:40:40,727] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - health started at 1593695440727 
+[2020-07-02 18:40:40,728] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - onReceive method call started Request [context={service=service}, requestValueObjects={}] 
+[2020-07-02 18:40:40,729] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - onReceive method call End  
+[2020-07-02 18:40:40,729] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - health ended at 1593695440727 
+[2020-07-02 18:40:40,733] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-2] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,733] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-2] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,732] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-2] [] - {"eid":"LOG","ets":1593695440731,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/service/health"},{"method":"GET"},{"status":200},{"duration":16}]}} 
+[2020-07-02 18:40:40,821] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-3] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,822] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-3] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,820] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-3] [] - {"eid":"LOG","ets":1593695440820,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/health"},{"method":"POST"},{"status":404},{"duration":64}]}} 
+[2020-07-02 18:40:40,842] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - health started at 1593695440842 
+[2020-07-02 18:40:40,843] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - onReceive method call started Request [context={}, requestValueObjects={}] 
+[2020-07-02 18:40:40,843] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - onReceive method call End  
+[2020-07-02 18:40:40,844] [INFO] org.sunbird.actors.HealthActor:92 [] [thisActorSystem-akka.actor.default-dispatcher-4] [] - health ended at 1593695440842 
+[2020-07-02 18:40:40,845] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-3] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:40,846] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-3] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:40,845] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-3] [] - {"eid":"LOG","ets":1593695440843,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/health"},{"method":"GET"},{"status":200},{"duration":4}]}} 
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec - in controllers.HealthControllerTest
+Running controllers.HealthControllerMockTest
+[2020-07-02 18:40:43,495] [INFO] o.a.c.config.YamlConfigurationLoader:89 [] [main] [] - Configuration location: file:/Users/rajeshr/Projects/groups/service/target/embeddedCassandra/cu-cassandra.yaml 
+[2020-07-02 18:40:43,735] [INFO] org.apache.cassandra.config.Config:496 [] [main] [] - Node configuration:[allocate_tokens_for_keyspace=null; authenticator=AllowAllAuthenticator; authorizer=AllowAllAuthorizer; auto_bootstrap=true; auto_snapshot=false; back_pressure_enabled=false; back_pressure_strategy=null; batch_size_fail_threshold_in_kb=50; batch_size_warn_threshold_in_kb=5; batchlog_replay_throttle_in_kb=1024; broadcast_address=null; broadcast_rpc_address=null; buffer_pool_use_heap_if_exhausted=true; cas_contention_timeout_in_ms=1000; cdc_enabled=false; cdc_free_space_check_interval_ms=250; cdc_raw_directory=target/embeddedCassandra/cdc; cdc_total_space_in_mb=0; client_encryption_options=<REDACTED>; cluster_name=Test Cluster; column_index_cache_size_in_kb=2; column_index_size_in_kb=64; commit_failure_policy=stop; commitlog_compression=null; commitlog_directory=target/embeddedCassandra/commitlog; commitlog_max_compression_buffers_in_pool=3; commitlog_periodic_queue_size=-1; commitlog_segment_size_in_mb=32; commitlog_sync=periodic; commitlog_sync_batch_window_in_ms=NaN; commitlog_sync_period_in_ms=10000; commitlog_total_space_in_mb=null; compaction_large_partition_warning_threshold_mb=100; compaction_throughput_mb_per_sec=16; concurrent_compactors=null; concurrent_counter_writes=32; concurrent_materialized_view_writes=32; concurrent_reads=32; concurrent_replicates=null; concurrent_writes=32; counter_cache_keys_to_save=2147483647; counter_cache_save_period=7200; counter_cache_size_in_mb=null; counter_write_request_timeout_in_ms=5000; credentials_cache_max_entries=1000; credentials_update_interval_in_ms=-1; credentials_validity_in_ms=2000; cross_node_timeout=false; data_file_directories=[Ljava.lang.String;@640429a5; disk_access_mode=auto; disk_failure_policy=stop; disk_optimization_estimate_percentile=0.95; disk_optimization_page_cross_chance=0.1; disk_optimization_strategy=ssd; dynamic_snitch=true; dynamic_snitch_badness_threshold=0.1; dynamic_snitch_reset_interval_in_ms=600000; dynamic_snitch_update_interval_in_ms=100; enable_materialized_views=true; enable_scripted_user_defined_functions=false; enable_user_defined_functions=false; enable_user_defined_functions_threads=true; encryption_options=org.apache.cassandra.config.EncryptionOptions$ServerEncryptionOptions@49b2033f; endpoint_snitch=SimpleSnitch; file_cache_round_up=null; file_cache_size_in_mb=null; gc_log_threshold_in_ms=200; gc_warn_threshold_in_ms=0; hinted_handoff_disabled_datacenters=[]; hinted_handoff_enabled=true; hinted_handoff_throttle_in_kb=1024; hints_compression=null; hints_directory=target/embeddedCassandra/hints; hints_flush_period_in_ms=10000; incremental_backups=false; index_interval=128; index_summary_capacity_in_mb=null; index_summary_resize_interval_in_minutes=60; initial_token=null; inter_dc_stream_throughput_outbound_megabits_per_sec=200; inter_dc_tcp_nodelay=true; internode_authenticator=null; internode_compression=none; internode_recv_buff_size_in_bytes=0; internode_send_buff_size_in_bytes=0; key_cache_keys_to_save=2147483647; key_cache_save_period=14400; key_cache_size_in_mb=null; listen_address=127.0.0.1; listen_interface=null; listen_interface_prefer_ipv6=false; listen_on_broadcast_address=false; max_hint_window_in_ms=10800000; max_hints_delivery_threads=2; max_hints_file_size_in_mb=128; max_mutation_size_in_kb=null; max_streaming_retries=3; max_value_size_in_mb=256; memtable_allocation_type=heap_buffers; memtable_cleanup_threshold=null; memtable_flush_writers=0; memtable_heap_space_in_mb=null; memtable_offheap_space_in_mb=null; min_free_space_per_drive_in_mb=50; native_transport_flush_in_batches_legacy=true; native_transport_max_concurrent_connections=-1; native_transport_max_concurrent_connections_per_ip=-1; native_transport_max_frame_size_in_mb=256; native_transport_max_threads=128; native_transport_port=9143; native_transport_port_ssl=null; num_tokens=1; otc_backlog_expiration_interval_ms=200; otc_coalescing_enough_coalesced_messages=8; otc_coalescing_strategy=DISABLED; otc_coalescing_window_us=200; partitioner=org.apache.cassandra.dht.Murmur3Partitioner; permissions_cache_max_entries=1000; permissions_update_interval_in_ms=-1; permissions_validity_in_ms=2000; phi_convict_threshold=8.0; prepared_statements_cache_size_mb=null; range_request_timeout_in_ms=10000; read_request_timeout_in_ms=5000; request_scheduler=org.apache.cassandra.scheduler.NoScheduler; request_scheduler_id=null; request_scheduler_options=null; request_timeout_in_ms=10000; role_manager=null; roles_cache_max_entries=1000; roles_update_interval_in_ms=-1; roles_validity_in_ms=2000; row_cache_class_name=org.apache.cassandra.cache.OHCProvider; row_cache_keys_to_save=2147483647; row_cache_save_period=0; row_cache_size_in_mb=0; rpc_address=localhost; rpc_interface=null; rpc_interface_prefer_ipv6=false; rpc_keepalive=true; rpc_listen_backlog=50; rpc_max_threads=2147483647; rpc_min_threads=16; rpc_port=9171; rpc_recv_buff_size_in_bytes=null; rpc_send_buff_size_in_bytes=null; rpc_server_type=sync; saved_caches_directory=target/embeddedCassandra/saved_caches; seed_provider=org.apache.cassandra.locator.SimpleSeedProvider{seeds=127.0.0.1}; server_encryption_options=<REDACTED>; slow_query_log_timeout_in_ms=500; snapshot_before_compaction=false; ssl_storage_port=7011; sstable_preemptive_open_interval_in_mb=50; start_native_transport=true; start_rpc=true; storage_port=7010; stream_throughput_outbound_megabits_per_sec=200; streaming_keep_alive_period_in_secs=300; streaming_socket_timeout_in_ms=86400000; thrift_framed_transport_size_in_mb=15; thrift_max_message_length_in_mb=16; thrift_prepared_statements_cache_size_mb=null; tombstone_failure_threshold=100000; tombstone_warn_threshold=1000; tracetype_query_ttl=86400; tracetype_repair_ttl=604800; transparent_data_encryption_options=org.apache.cassandra.config.TransparentDataEncryptionOptions@3f9d894b; trickle_fsync=false; trickle_fsync_interval_in_kb=10240; truncate_request_timeout_in_ms=60000; unlogged_batch_across_partitions_warn_threshold=10; user_defined_function_fail_timeout=1500; user_defined_function_warn_timeout=500; user_function_timeout_policy=die; windows_timer_interval=0; write_request_timeout_in_ms=2000] 
+[2020-07-02 18:40:43,735] [INFO] o.a.c.config.DatabaseDescriptor:373 [] [main] [] - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap 
+[2020-07-02 18:40:43,738] [INFO] o.a.c.config.DatabaseDescriptor:431 [] [main] [] - Global memtable on-heap threshold is enabled at 455MB 
+[2020-07-02 18:40:43,739] [INFO] o.a.c.config.DatabaseDescriptor:435 [] [main] [] - Global memtable off-heap threshold is enabled at 455MB 
+[2020-07-02 18:40:44,106] [WARN] o.a.c.config.DatabaseDescriptor:673 [] [main] [] - index_interval has been deprecated and should be removed from cassandra.yaml 
+[2020-07-02 18:40:44,106] [WARN] o.a.c.config.DatabaseDescriptor:677 [] [main] [] - Please rename encryption_options as server_encryption_options in the yaml 
+[2020-07-02 18:40:44,192] [INFO] o.a.c.net.RateBasedBackPressure:123 [] [main] [] - Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000. 
+[2020-07-02 18:40:44,192] [INFO] o.a.c.config.DatabaseDescriptor:735 [] [main] [] - Back-pressure is disabled with strategy null. 
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.415 sec <<< FAILURE! - in controllers.HealthControllerMockTest
+controllers.HealthControllerMockTest  Time elapsed: 3.415 sec  <<< ERROR!
+java.lang.ExceptionInInitializerError: null
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.cassandra.utils.MBeanWrapper$PlatformMBeanWrapper.registerMBean(MBeanWrapper.java:108)
+	at org.apache.cassandra.utils.MBeanWrapper.registerMBean(MBeanWrapper.java:52)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.registerMBean(DynamicEndpointSnitch.java:142)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.<init>(DynamicEndpointSnitch.java:107)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.<init>(DynamicEndpointSnitch.java:77)
+	at org.apache.cassandra.config.DatabaseDescriptor.createEndpointSnitch(DatabaseDescriptor.java:1046)
+	at org.apache.cassandra.config.DatabaseDescriptor.applySnitch(DatabaseDescriptor.java:969)
+	at org.apache.cassandra.config.DatabaseDescriptor.applyAll(DatabaseDescriptor.java:324)
+	at org.apache.cassandra.config.DatabaseDescriptor.daemonInitialization(DatabaseDescriptor.java:148)
+	at org.apache.cassandra.config.DatabaseDescriptor.daemonInitialization(DatabaseDescriptor.java:132)
+	at org.cassandraunit.utils.EmbeddedCassandraServerHelper.startEmbeddedCassandra(EmbeddedCassandraServerHelper.java:145)
+	at org.cassandraunit.utils.EmbeddedCassandraServerHelper.startEmbeddedCassandra(EmbeddedCassandraServerHelper.java:110)
+	at org.cassandraunit.utils.EmbeddedCassandraServerHelper.startEmbeddedCassandra(EmbeddedCassandraServerHelper.java:90)
+	at org.cassandraunit.utils.EmbeddedCassandraServerHelper.startEmbeddedCassandra(EmbeddedCassandraServerHelper.java:82)
+	at controllers.EmbeddedCassandra.<init>(EmbeddedCassandra.java:33)
+	at controllers.TestHelper.<clinit>(TestHelper.java:23)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.createTestInstance(PowerMockJUnit44RunnerDelegateImpl.java:187)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.createTest(PowerMockJUnit44RunnerDelegateImpl.java:172)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:194)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+
+Running controllers.ReadGroupControllerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in controllers.ReadGroupControllerTest
+Running controllers.BaseControllerTest
+[2020-07-02 18:40:44,286] [INFO] o.a.k.c.producer.ProducerConfig:178 [] [application-akka.actor.default-dispatcher-3] [] - ProducerConfig values: 
+	metric.reporters = []
+	metadata.max.age.ms = 300000
+	reconnect.backoff.ms = 50
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [SUNBIRD_KAFKA_URL_IS_UNDEFINED]
+	ssl.keystore.type = JKS
+	sasl.mechanism = GSSAPI
+	max.block.ms = 0
+	interceptor.classes = null
+	ssl.truststore.password = null
+	client.id = gryffindoor.local-default-logback-relaxed
+	ssl.endpoint.identification.algorithm = null
+	request.timeout.ms = 30000
+	acks = 0
+	receive.buffer.bytes = 32768
+	ssl.truststore.type = JKS
+	retries = 0
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	send.buffer.bytes = 131072
+	compression.type = none
+	metadata.fetch.timeout.ms = 60000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	buffer.memory = 33554432
+	timeout.ms = 30000
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.trustmanager.algorithm = PKIX
+	block.on.buffer.full = false
+	ssl.key.password = null
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	max.in.flight.requests.per.connection = 5
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	batch.size = 16384
+	ssl.keystore.location = null
+	ssl.cipher.suites = null
+	security.protocol = PLAINTEXT
+	max.request.size = 1048576
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.keymanager.algorithm = SunX509
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	linger.ms = 15000
+ 
+[2020-07-02 18:40:44,287] [INFO] o.a.k.clients.producer.KafkaProducer:658 [] [application-akka.actor.default-dispatcher-3] [] - Closing the Kafka producer with timeoutMillis = 0 ms. 
+[2020-07-02 18:40:44,286] [INFO] TelemetryEventLogger:52 [] [application-akka.actor.default-dispatcher-3] [] - {"eid":"LOG","ets":1593695444284,"ver":"3.0","actor":{"id":"Anonymous","type":"User"},"context":{"channel":"sdadasdad","pdata":{},"env":"Dev","cdata":[],"rollup":{}},"edata":{"level":"info","type":"Api_access","message":"","params":[{"url":"/unknown"},{"method":"POST"},{"status":404},{"duration":3}]}} 
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec - in controllers.BaseControllerTest
+[2020-07-02 18:40:44,399] [INFO] o.s.h.CassandraConnectionManagerImpl:174 [] [Thread-7] [] - started resource cleanup Cassandra. 
+[2020-07-02 18:40:44,413] [INFO] o.a.cassandra.hints.HintsService:209 [] [StorageServiceShutdownHook] [] - Paused hints dispatch 
+[2020-07-02 18:40:44,415] [INFO] o.a.cassandra.thrift.ThriftServer:139 [] [StorageServiceShutdownHook] [] - Stop listening to thrift clients 
+[2020-07-02 18:40:44,754] [INFO] o.apache.cassandra.transport.Server:176 [] [StorageServiceShutdownHook] [] - Stop listening for CQL clients 
+[2020-07-02 18:40:44,755] [INFO] org.apache.cassandra.gms.Gossiper:1551 [] [StorageServiceShutdownHook] [] - Announcing shutdown 
+[2020-07-02 18:40:44,756] [INFO] o.a.cassandra.service.StorageService:2327 [] [StorageServiceShutdownHook] [] - Node /127.0.0.1 state jump to shutdown 
+[2020-07-02 18:40:44,845] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.ExceptionInInitializerError: null
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.RuntimeException: javax.management.InstanceAlreadyExistsException: org.apache.cassandra.db:type=StorageService
+	at org.apache.cassandra.utils.MBeanWrapper$OnException.lambda$static$0(MBeanWrapper.java:169)
+	at org.apache.cassandra.utils.MBeanWrapper$PlatformMBeanWrapper.registerMBean(MBeanWrapper.java:112)
+	at org.apache.cassandra.utils.MBeanWrapper.registerMBean(MBeanWrapper.java:52)
+	at org.apache.cassandra.service.StorageService.<init>(StorageService.java:260)
+	at org.apache.cassandra.service.StorageService.<clinit>(StorageService.java:150)
+	... 13 common frames omitted
+Caused by: javax.management.InstanceAlreadyExistsException: org.apache.cassandra.db:type=StorageService
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.cassandra.utils.MBeanWrapper$PlatformMBeanWrapper.registerMBean(MBeanWrapper.java:108)
+	... 16 common frames omitted
+[2020-07-02 18:40:44,950] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,051] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,152] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,254] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,355] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,457] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,562] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,667] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,768] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,869] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:45,970] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,074] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,175] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,279] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,384] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,487] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,589] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,690] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,761] [INFO] o.a.cassandra.net.MessagingService:981 [] [StorageServiceShutdownHook] [] - Waiting for messaging service to quiesce 
+[2020-07-02 18:40:46,764] [INFO] o.a.cassandra.net.MessagingService:1336 [] [ACCEPT-/127.0.0.1] [] - MessagingService has terminated the accept() thread 
+[2020-07-02 18:40:46,792] [ERROR] o.a.c.service.CassandraDaemon:228 [] [ScheduledTasks:1] [] - Exception in thread Thread[ScheduledTasks:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.service.StorageService
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.updateScores(DynamicEndpointSnitch.java:287)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch.access$000(DynamicEndpointSnitch.java:46)
+	at org.apache.cassandra.locator.DynamicEndpointSnitch$1.run(DynamicEndpointSnitch.java:90)
+	at org.apache.cassandra.concurrent.DebuggableScheduledThreadPoolExecutor$UncomplainingRunnable.run(DebuggableScheduledThreadPoolExecutor.java:118)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,803] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,803] [WARN] o.a.cassandra.service.StorageService:4591 [] [StorageServiceShutdownHook] [] - Caught exception while waiting for memtable flushes during shutdown hook 
+java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.utils.FBUtilities.waitOnFuture(FBUtilities.java:422)
+	at org.apache.cassandra.service.StorageService.drain(StorageService.java:4585)
+	at org.apache.cassandra.service.StorageService$1.runMayThrow(StorageService.java:662)
+	at org.apache.cassandra.utils.WrappedRunnable.run(WrappedRunnable.java:28)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.cassandra.utils.FBUtilities.waitOnFuture(FBUtilities.java:418)
+	... 6 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 3 common frames omitted
+[2020-07-02 18:40:46,813] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoSuchFieldError: DIGIT
+	at org.apache.cassandra.io.sstable.format.SSTableFormat$Type.<init>(SSTableFormat.java:63)
+	at org.apache.cassandra.io.sstable.format.SSTableFormat$Type.<clinit>(SSTableFormat.java:46)
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,814] [WARN] o.a.cassandra.service.StorageService:4591 [] [StorageServiceShutdownHook] [] - Caught exception while waiting for memtable flushes during shutdown hook 
+java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.NoSuchFieldError: DIGIT
+	at org.apache.cassandra.utils.FBUtilities.waitOnFuture(FBUtilities.java:422)
+	at org.apache.cassandra.service.StorageService.drain(StorageService.java:4585)
+	at org.apache.cassandra.service.StorageService$1.runMayThrow(StorageService.java:662)
+	at org.apache.cassandra.utils.WrappedRunnable.run(WrappedRunnable.java:28)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: java.lang.NoSuchFieldError: DIGIT
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.cassandra.utils.FBUtilities.waitOnFuture(FBUtilities.java:418)
+	... 6 common frames omitted
+Caused by: java.lang.NoSuchFieldError: DIGIT
+	at org.apache.cassandra.io.sstable.format.SSTableFormat$Type.<init>(SSTableFormat.java:63)
+	at org.apache.cassandra.io.sstable.format.SSTableFormat$Type.<clinit>(SSTableFormat.java:46)
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 3 common frames omitted
+[2020-07-02 18:40:46,822] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,824] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,826] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,829] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,831] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,831] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,832] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,834] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,837] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,838] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,839] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,847] [ERROR] o.a.c.service.CassandraDaemon:228 [] [MemtablePostFlush:1] [] - Exception in thread Thread[MemtablePostFlush:1,5,main] 
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-07-02 18:40:46,847] [ERROR] o.a.cassandra.service.StorageService:4633 [] [StorageServiceShutdownHook] [] - Caught an exception while draining  
+java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.utils.Throwables.maybeFail(Throwables.java:51)
+	at org.apache.cassandra.utils.FBUtilities.waitOnFutures(FBUtilities.java:410)
+	at org.apache.cassandra.utils.FBUtilities.waitOnFutures(FBUtilities.java:373)
+	at org.apache.cassandra.service.StorageService.drain(StorageService.java:4610)
+	at org.apache.cassandra.service.StorageService$1.runMayThrow(StorageService.java:662)
+	at org.apache.cassandra.utils.WrappedRunnable.run(WrappedRunnable.java:28)
+	at org.apache.cassandra.concurrent.NamedThreadFactory.lambda$threadLocalDeallocator$0(NamedThreadFactory.java:81)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.cassandra.utils.FBUtilities.waitOnFutures(FBUtilities.java:397)
+	... 7 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+	Suppressed: java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		... 10 common frames omitted
+	Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+		at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+		at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+		at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+		at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+		at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		... 3 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.cassandra.io.sstable.format.SSTableFormat$Type
+	at org.apache.cassandra.db.ColumnFamilyStore.getSSTablePath(ColumnFamilyStore.java:860)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:445)
+	at org.apache.cassandra.db.Memtable$FlushRunnable.<init>(Memtable.java:415)
+	at org.apache.cassandra.db.Memtable.createFlushRunnables(Memtable.java:316)
+	at org.apache.cassandra.db.Memtable.flushRunnables(Memtable.java:298)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.flushMemtable(ColumnFamilyStore.java:1157)
+	at org.apache.cassandra.db.ColumnFamilyStore$Flush.run(ColumnFamilyStore.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 3 common frames omitted
+
+Results :
+
+Tests in error: 
+  JUnit4Provider.invoke:124->executeTestSet:153->execute:264 ? ExceptionInInitializer
+
+Tests run: 12, Failures: 0, Errors: 1, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 49.666 s
+[INFO] Finished at: 2020-07-02T18:40:47+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.16:test (default-test) on project group-service: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/rajeshr/Projects/groups/service/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

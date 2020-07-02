@@ -6,6 +6,7 @@ import static org.powermock.api.mockito.PowerMockito.when;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import org.junit.Assert;
+import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.sunbird.cassandraimpl.CassandraOperationImpl;
 import org.sunbird.common.Constants;
@@ -16,9 +17,16 @@ import org.sunbird.util.JsonKey;
 
 public class MockCassandra {
 
-  public static CassandraOperationImpl mockCassandraOperation() throws Exception {
-    EmbeddedCassandra.setUp();
+  static {
+    try {
+      EmbeddedCassandra.setUp();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
     EmbeddedCassandra.createStatements();
+  }
+
+  public static CassandraOperationImpl mockCassandraOperation()  {
     CassandraOperationImpl cassandraOperation;
     // mock cassandra
     PowerMockito.mockStatic(ServiceFactory.class);

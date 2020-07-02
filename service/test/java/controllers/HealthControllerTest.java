@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.Map;
 import javax.ws.rs.core.Response;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import play.mvc.Result;
 

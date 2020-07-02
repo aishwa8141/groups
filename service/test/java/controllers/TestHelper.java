@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.WeakHashMap;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 import org.powermock.api.mockito.PowerMockito;
 import org.sunbird.exception.BaseException;
 import org.sunbird.util.JsonKey;
@@ -19,9 +20,6 @@ import play.test.Helpers;
 
 /** This a helper class for All the Controllers Test */
 public class TestHelper {
-  // One and only app
-  private static Application app = Helpers.fakeApplication();
-
   protected org.sunbird.Application sbApp;
 
   // Let test cases create one if needed. This will be private.
@@ -35,6 +33,7 @@ public class TestHelper {
     headerMap.put(JsonKey.VER, "1.0");
     headerMap.put(JsonKey.ID, "api.test.id");
     headerMap.put(JsonKey.REQUEST_MESSAGE_ID, this.getClass().getSimpleName());
+    EmbeddedCassandra.getInstance().start();
   }
 
   /**
@@ -56,7 +55,7 @@ public class TestHelper {
       req = new Http.RequestBuilder().uri(url).method(method);
     }
     req.header("Content-Type", "application/json");
-    Result result = route(app, req);
+    Result result = route(EmbeddedCassandra.getInstance().getApp(), req);
     return result;
   }
 

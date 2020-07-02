@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import akka.actor.ActorRef;
 import javax.ws.rs.core.Response;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
