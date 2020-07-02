@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cassandra-utils</artifactId>
-    <version>1.0.0</version>
     <properties>
         <version.compiler.plugin>2.3.1</version.compiler.plugin>
         <maven.compiler.target>1.8</maven.compiler.target>

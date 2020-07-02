@@ -36,6 +36,11 @@
     </properties>
 
     <modules>
+        <module>sb-utils</module>
+        <module>sb-telemetry-utils</module>
+        <module>sb-actor</module>
+        <module>group-actors</module>
+        <module>cassandra-utils</module>
         <module>service</module>
     </modules>
 </project>

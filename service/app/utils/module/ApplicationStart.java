@@ -1,4 +1,4 @@
-package utils;
+package utils.module;
 
 import java.util.concurrent.CompletableFuture;
 import javax.inject.Inject;
@@ -24,10 +24,22 @@ public class ApplicationStart {
                           Environment environment) throws BaseException {
     // instantiate actor system and initialize all the actors
     Application.getInstance().init();
+    setEnvironment(environment);
     // Shut-down hook
     lifecycle.addStopHook(
         () -> {
           return CompletableFuture.completedFuture(null);
         });
   }
+
+    private void setEnvironment(Environment environment) {
+        // TODO: Any env specific work.
+        if (environment.asJava().isDev()) {
+            //env = ProjectUtil.Environment.dev;
+        } else if (environment.asJava().isTest()) {
+            //env = ProjectUtil.Environment.qa;
+        } else {
+            //env = ProjectUtil.Environment.prod;
+        }
+    }
 }

@@ -33,11 +33,6 @@
         <appender-ref ref="FILE"/>
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="ASYNC"/>
-    </root>
-
     <appender name="kafka-appender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%msg</pattern>
@@ -69,5 +64,10 @@
     <logger name="TelemetryEventLogger" level="INFO">
         <appender-ref ref="kafka-appender" />
     </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ASYNC"/>
+    </root>
 
 </configuration>

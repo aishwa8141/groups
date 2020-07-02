@@ -26,7 +26,7 @@ public class Application {
     List<String> actorClassPaths = new ArrayList<>();
     actorClassPaths.add("org.sunbird");
     ActorService.getInstance().init(actorSystemName, actorClassPaths);
-    checkCassandraConnections();
+    //checkCassandraConnections();
   }
 
   /**

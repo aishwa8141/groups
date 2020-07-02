@@ -30,6 +30,6 @@ public class HealthControllerMockTest extends TestHelper {
 
     Result result = performTest("/service/health", "GET", null, headerMap);
     System.out.println(getResponseStatus(result));
-    assertEquals(Response.Status.fromStatusCode(400).getStatusCode(), getResponseStatus(result));
+    assertEquals(Response.Status.fromStatusCode(500).getStatusCode(), getResponseStatus(result));
   }
 }

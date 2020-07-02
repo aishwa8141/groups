@@ -10,7 +10,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sb-telemetry-utils</artifactId>
-    <version>1.0.0</version>
     <properties>
         <slf4j.version>1.6.1</slf4j.version>
 
