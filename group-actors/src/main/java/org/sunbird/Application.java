@@ -26,7 +26,6 @@ public class Application {
     List<String> actorClassPaths = new ArrayList<>();
     actorClassPaths.add("org.sunbird");
     ActorService.getInstance().init(actorSystemName, actorClassPaths);
-    //checkCassandraConnections();
   }
 
   /**
@@ -39,7 +38,4 @@ public class Application {
     return ActorCache.getActorRef(operation);
   }
 
-  private static void checkCassandraConnections() throws BaseException {
-    DBUtil.checkCassandraDbConnections();
-  }
 }

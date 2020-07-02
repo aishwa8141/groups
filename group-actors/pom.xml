@@ -26,12 +26,6 @@
             <groupId>org.sunbird</groupId>
             <artifactId>cassandra-utils</artifactId>
             <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -68,11 +62,6 @@
             <artifactId>powermock-api-mockito</artifactId>
             <version>1.6.5</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.0.1</version>
         </dependency>
     </dependencies>
     <build>

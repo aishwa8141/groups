@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import org.sunbird.Application;
 import org.sunbird.exception.BaseException;
+import org.sunbird.util.DBUtil;
 import play.api.Environment;
 import play.api.inject.ApplicationLifecycle;
 
@@ -25,6 +26,8 @@ public class ApplicationStart {
     // instantiate actor system and initialize all the actors
     Application.getInstance().init();
     setEnvironment(environment);
+    checkCassandraConnections();
+
     // Shut-down hook
     lifecycle.addStopHook(
         () -> {
@@ -41,5 +44,9 @@ public class ApplicationStart {
         } else {
             //env = ProjectUtil.Environment.prod;
         }
+    }
+
+    private static void checkCassandraConnections() throws BaseException {
+        DBUtil.checkCassandraDbConnections();
     }
 }
