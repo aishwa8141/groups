@@ -263,15 +263,15 @@
             <artifactId>netty-handler</artifactId>
             <version>4.0.56.Final</version>
         </dependency>
-        <dependency>
-            <groupId>org.hyperic</groupId>
-            <artifactId>sigar</artifactId>
-            <version>1.6.4</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.hyperic</groupId>-->
+<!--            <artifactId>sigar</artifactId>-->
+<!--            <version>1.6.4</version>-->
+<!--        </dependency>-->
     </dependencies>
     <build>
         <sourceDirectory>${basedir}/app</sourceDirectory>
-        <testSourceDirectory>${basedir}/test/java</testSourceDirectory>
+        <testSourceDirectory>${basedir}/test</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/conf</directory>

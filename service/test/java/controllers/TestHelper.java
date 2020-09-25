@@ -28,10 +28,6 @@ public class TestHelper {
   // Only for derivations
   protected Map<String, String> headerMap;
 
-  static {
-    EmbeddedCassandra.getInstance().start();
-  }
-
   public TestHelper() {
     Map userAuthentication = new HashMap<String, String>();
     userAuthentication.put(JsonKey.USER_ID, "userId");
@@ -41,6 +37,7 @@ public class TestHelper {
     headerMap.put(JsonKey.ID, "api.test.id");
     headerMap.put(JsonKey.REQUEST_MESSAGE_ID, this.getClass().getSimpleName());
     headerMap.put(JsonKey.USER_ID, "2345");
+    EmbeddedCassandra.getInstance().start();
   }
 
   /**
