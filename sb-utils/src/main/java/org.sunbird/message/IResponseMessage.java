@@ -32,6 +32,7 @@ public interface IResponseMessage {
     String EXCEEDED_GROUP_MAX_LIMIT = "EXCEEDED_GROUP_MAX_LIMIT";
     String EXCEEDED_ACTIVITY_MAX_LIMIT = "EXCEEDED_ACTIVITY_MAX_LIMIT";
     String SERVICE_UNAVAILABLE = "SERVICE UNAVAILABLE";
+    String INVALID_OPERATION_NAME = "INVALID_OPERATION_NAME";
   }
 
   interface Message {
@@ -52,5 +53,7 @@ public interface IResponseMessage {
     String INTERNAL_ERROR = "Process failed,please try again later.";
     String SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE";
     String UNAUTHORIZED = "You are not authorized.";
+    String INVALID_OPERATION_NAME =
+        "Operation name is invalid. Please provide a valid operation name";
   }
 }

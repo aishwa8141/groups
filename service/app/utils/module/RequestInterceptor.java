@@ -28,6 +28,8 @@ public class RequestInterceptor {
 
     apiHeaderIgnoreMap.put("/service/health", var);
     apiHeaderIgnoreMap.put("/health", var);
+    apiHeaderIgnoreMap.put("/v1/group/create", var);
+    apiHeaderIgnoreMap.put("/v1/group/update", var);
   }
 
   /**

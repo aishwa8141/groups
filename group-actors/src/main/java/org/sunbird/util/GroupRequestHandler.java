@@ -28,7 +28,7 @@ public class GroupRequestHandler {
       group.setMembershipType(JsonKey.INVITE_ONLY);
     }
     group.setStatus(JsonKey.ACTIVE);
-    group.setCreatedBy(getRequestedBy(actorMessage));
+    group.setCreatedBy("23435940859");
     group.setId(UUID.randomUUID().toString());
     List<Map<String, Object>> activityList =
         (List<Map<String, Object>>) actorMessage.getRequest().get(JsonKey.ACTIVITIES);

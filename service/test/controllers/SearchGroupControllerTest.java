@@ -5,17 +5,11 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.Map;
 import javax.ws.rs.core.Response;
-import org.junit.Before;
 import org.junit.Test;
-import org.sunbird.exception.BaseException;
 import org.sunbird.util.JsonKey;
 import play.mvc.Result;
 
-public class SearchGroupControllerTest extends BaseApplicationTest {
-  @Before
-  public void before() throws BaseException {
-    setup(controllers.DummyActor.class);
-  }
+public class SearchGroupControllerTest extends TestHelper {
 
   @Test
   public void searchGroupSuccessResponse() {
@@ -24,7 +18,7 @@ public class SearchGroupControllerTest extends BaseApplicationTest {
     reqMap.put(JsonKey.FILTERS, filters);
     Map<String, Object> request = new HashMap<>();
     request.put("request", reqMap);
-    Result result = performTest("/v1/group/list", "POST", request);
+    Result result = performTest("/v1/group/list", "POST", request, headerMap);
     assertTrue(getResponseStatus(result) == Response.Status.OK.getStatusCode());
   }
 }

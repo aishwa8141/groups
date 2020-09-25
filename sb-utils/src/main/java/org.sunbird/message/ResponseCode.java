@@ -28,6 +28,8 @@ public enum ResponseCode {
   internalError(IResponseMessage.INTERNAL_ERROR, IResponseMessage.Message.INTERNAL_ERROR),
   serviceUnAvailable(
       IResponseMessage.Key.SERVICE_UNAVAILABLE, IResponseMessage.Message.SERVICE_UNAVAILABLE),
+  invalidOperationName(
+      IResponseMessage.Key.INVALID_OPERATION_NAME, IResponseMessage.Message.INVALID_OPERATION_NAME),
   OK(200),
   CLIENT_ERROR(400),
   SERVER_ERROR(500),
@@ -92,6 +94,7 @@ public enum ResponseCode {
    * @return String
    */
   public static ResponseCode getResponse(String errorCode) {
+    System.out.println("errorCode" + errorCode);
     if (StringUtils.isBlank(errorCode)) {
       return null;
     } else if (JsonKey.UNAUTHORIZED.equals(errorCode)) {

@@ -8,18 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.ws.rs.core.Response;
-import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.sunbird.exception.BaseException;
 import org.sunbird.util.JsonKey;
 import play.mvc.Result;
 
-public class UpdateGroupControllerTest extends BaseApplicationTest {
-
-  @Before
-  public void before() throws BaseException {
-    setup(DummyActor.class);
-  }
+@Ignore
+public class UpdateGroupControllerTest extends TestHelper {
 
   @Test
   public void testUpdateGroupPasses() {
@@ -36,7 +31,7 @@ public class UpdateGroupControllerTest extends BaseApplicationTest {
     reqMap.put(JsonKey.MEMBERS, members);
     request.put("request", reqMap);
 
-    Result result = performTest("/v1/group/update", "PATCH", request);
+    Result result = performTest("/v1/group/update", "PATCH", request, headerMap);
     assertTrue(getResponseStatus(result) == Response.Status.OK.getStatusCode());
   }
 
@@ -46,7 +41,7 @@ public class UpdateGroupControllerTest extends BaseApplicationTest {
     reqMap.put(JsonKey.GROUP_ID, "");
     Map<String, Object> request = new HashMap<>();
     request.put("request", reqMap);
-    Result result = performTest("/v1/group/update", "PATCH", request);
+    Result result = performTest("/v1/group/update", "PATCH", request, headerMap);
     System.out.println(getResponseStatus(result));
     assertTrue(getResponseStatus(result) == Response.Status.BAD_REQUEST.getStatusCode());
   }
@@ -56,7 +51,7 @@ public class UpdateGroupControllerTest extends BaseApplicationTest {
     Map<String, Object> reqMap = new HashMap<>();
     Map<String, Object> request = new HashMap<>();
     request.put("request", reqMap);
-    Result result = performTest("/v1/group/update", "PATCH", request);
+    Result result = performTest("/v1/group/update", "PATCH", request, headerMap);
     assertTrue(getResponseStatus(result) == Response.Status.BAD_REQUEST.getStatusCode());
   }
 
@@ -77,7 +72,7 @@ public class UpdateGroupControllerTest extends BaseApplicationTest {
     activities.put(JsonKey.ADD, addActvity);
     reqMap.put(JsonKey.ACTIVITIES, activities);
     request.put("request", reqMap);
-    Result result = performTest("/v1/group/update", "PATCH", request);
+    Result result = performTest("/v1/group/update", "PATCH", request, headerMap);
     assertEquals(getResponseStatus(result), Response.Status.BAD_REQUEST.getStatusCode());
   }
 }

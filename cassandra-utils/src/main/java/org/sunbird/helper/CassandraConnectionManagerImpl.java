@@ -1,6 +1,16 @@
 package org.sunbird.helper;
 
-import com.datastax.driver.core.*;
+import com.datastax.driver.core.AtomicMonotonicTimestampGenerator;
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ConsistencyLevel;
+import com.datastax.driver.core.Host;
+import com.datastax.driver.core.HostDistance;
+import com.datastax.driver.core.Metadata;
+import com.datastax.driver.core.PoolingOptions;
+import com.datastax.driver.core.ProtocolVersion;
+import com.datastax.driver.core.QueryOptions;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.TableMetadata;
 import com.datastax.driver.core.policies.DefaultRetryPolicy;
 import java.util.Collection;
 import java.util.List;
@@ -66,7 +76,7 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
       poolingOptions.setPoolTimeoutMillis(
           Integer.parseInt(cache.getProperty(Constants.POOL_TIMEOUT)));
 
-      cluster = createCluster(hosts, poolingOptions);
+      createCluster(hosts, poolingOptions);
 
       final Metadata metadata = cluster.getMetadata();
       String msg = String.format("Connected to cluster: %s", metadata.getClusterName());
@@ -87,9 +97,23 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
   }
 
   private static Cluster createCluster(String[] hosts, PoolingOptions poolingOptions) {
+    int port = 0;
+    try {
+      port = Integer.parseInt(System.getenv("sunbird_cassandra_port"));
+    } catch (NumberFormatException nfe) {
+      logger.info("sunbird_cassandra_port is not set. Checking test run...");
+      try {
+        port = Integer.parseInt(System.getProperty("sunbird_cassandra_port"));
+      } catch (NumberFormatException nfe2) {
+        logger.info("Defaulting to default port");
+        port = 9042;
+      }
+    }
+
     Cluster.Builder builder =
         Cluster.builder()
             .addContactPoints(hosts)
+            .withPort(port)
             .withProtocolVersion(ProtocolVersion.V3)
             .withRetryPolicy(DefaultRetryPolicy.INSTANCE)
             .withTimestampGenerator(new AtomicMonotonicTimestampGenerator())
@@ -151,7 +175,9 @@ public class CassandraConnectionManagerImpl implements CassandraConnectionManage
         for (Map.Entry<String, Session> entry : cassandraSessionMap.entrySet()) {
           cassandraSessionMap.get(entry.getKey()).close();
         }
-        cluster.close();
+        if (cluster != null) {
+          cluster.close();
+        }
         logger.info("completed resource cleanup Cassandra.");
       } catch (Exception ex) {
         logger.info("Error :", ex);
